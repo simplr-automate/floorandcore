@@ -1,0 +1,172 @@
+/* Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 50%, #ac7d88 100%);
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.1);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 800;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  color: white;
+}
+
+.site-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.coming-soon-container {
+    min-height: 60vh; /* Reduced since we now have hero banner */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    font-family: 'Comfortaa', sans-serif;
+    color: #333;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.coming-soon-container h2 { /* Changed from h1 to h2 since h1 is now in hero */
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem; /* Slightly smaller since it's now secondary */
+    color: #040404;
+    margin-bottom: 1.5rem;
+}
+
+.coming-soon-container p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.coming-soon-container .icon-placeholder {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #ac7d88, #ac7d88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* For better browser support */
+}
+
+/* Button styling */
+.coming-soon-container a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #ac7d88, #ac7d88);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.coming-soon-container a:hover {
+    transform: scale(1.05);
+}
+
+.coming-soon-container a:focus {
+    outline: 2px solid #ac7d88;
+    outline-offset: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-banner {
+        padding: 4rem 0;
+    }
+
+    .coming-soon-container {
+        padding: 3rem 1.5rem;
+        min-height: 50vh;
+    }
+
+    .coming-soon-container h2 {
+        font-size: 2rem;
+    }
+
+    .coming-soon-container p {
+        font-size: 1.3rem;
+    }
+
+    .coming-soon-container .icon-placeholder {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-banner {
+        padding: 3rem 0;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .coming-soon-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .coming-soon-container p {
+        font-size: 1.2rem;
+    }
+}

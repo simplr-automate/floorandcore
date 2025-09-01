@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Floor & Core | Pelvic Floor Physical Therapy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Professional pelvic floor therapy with proven results. Gentle, supportive care for every stage of motherhood." />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/index.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <div id="nav-placeholder"></div>
+
+  <!-- HERO BANNER -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1 class="hero-title">because every<span class="hero-highlight">BODY</span> has a pelvic floor</h1>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="site-content">
+    <div class="left-section">
+      <div class="logo-section">
+        <img src="/assets/images/icons/fcLogoCircle.png" alt="Floor & Core Logo" class="main-logo" />
+      </div>
+
+      <!-- Photo Gallery -->
+      <div class="photo-gallery">
+        <div class="gallery-container">
+          <div class="gallery-slide active">
+            <img src="/assets/images/gallery/photo1.jpg" alt="Pelvic floor therapy session" class="gallery-image" />
+          </div>
+          <div class="gallery-slide">
+            <img src="/assets/images/gallery/photo2.jpg" alt="Exercise demonstration" class="gallery-image" />
+          </div>
+          <div class="gallery-slide">
+            <img src="/assets/images/gallery/photo3.jpg" alt="Therapy equipment" class="gallery-image" />
+          </div>
+        </div>
+
+        <!-- Gallery indicators -->
+        <div class="gallery-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
+          <span class="indicator" data-slide="3"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="services-list">
+        <div class="service-item">
+          <span class="check-icon">✔</span>
+          <span class="service-text">Pregnant or postpartum? We're here for you.</span>
+        </div>
+        <div class="service-item">
+          <span class="check-icon">✔</span>
+          <span class="service-text">Struggling with chronic constipation or painful sex? We've got you.</span>
+        </div>
+        <div class="service-item">
+          <span class="check-icon">✔</span>
+          <span class="service-text">Always rushing to the bathroom with urinary urgency? We can help.</span>
+        </div>
+        <div class="service-item">
+          <span class="check-icon">✔</span>
+          <span class="service-text">Dealing with stubborn low back pain that won't go away? Let's talk.</span>
+        </div>
+        <div class="service-item">
+          <span class="check-icon">✔</span>
+          <span class="service-text">Feeling anxious about how to push during birth and want some guidance? We've got your back.</span>
+        </div>
+        <div class="service-ending">
+          <p>…and that's just the beginning.</p>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <p class="cta-text">
+          Not sure if pelvic floor therapy is right for you?<br />
+          Book a <strong>FREE discovery call</strong> and let's find out together.
+        </p>
+        <!-- <button class="cta-button" type="button" onclick="openModal()">Click here to connect</button> -->
+         <a href="/contact.html" class="cta-button">Click here to connect</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="chatModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close" aria-label="Close">&times;</button>
+      <h2 id="modalTitle" class="modal-title">Let's Chat</h2>
+      <form id="chatForm" class="modal-form" novalidate>
+        <label>
+          Name:<br />
+          <input type="text" name="name" required class="form-input" />
+        </label>
+        <label>
+          Email:<br />
+          <input type="email" name="email" required class="form-input" />
+        </label>
+        <label>
+          Phone:<br />
+          <input type="tel" name="phone" required class="form-input" />
+        </label>
+        <label>
+          Tell us your story:<br />
+          <textarea name="story" rows="4" required class="form-textarea" placeholder="Share anything you'd like us to know..."></textarea>
+        </label>
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>

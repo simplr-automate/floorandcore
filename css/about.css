@@ -1,0 +1,178 @@
+/* Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 50%, #ac7d88 100%);
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.1);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 800;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  color: white;
+}
+
+/* Shared intro section for Gabby */
+.about-intro {
+  display: flex;
+  align-items: flex-end; /* aligns bottom of photo with bottom of text block */
+  gap: 2rem;
+  margin: 3rem 0; /* spacing from nav and above footer */
+  flex-wrap: wrap;
+  flex-direction: row-reverse; /* photo on the right */
+}
+
+/* ✨ Modern circular photo with gradient border */
+.about-photo {
+  flex: 0 0 280px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  /* Gradient border effect */
+  padding: 6px; /* space for gradient ring */
+  background: linear-gradient(135deg, #85586F, #8C7D88);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text container */
+.about-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Standardize all h2 spacing */
+.about-section h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: 'Fredoka', sans-serif;
+  color: #040404;
+  letter-spacing: 0.05em;
+  user-select: none;
+  box-sizing: border-box;
+  margin: 0 0 1.5rem 0; /* bottom spacing */
+}
+
+/* Standardize all paragraph spacing */
+.about-section p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  font-family: 'Comfortaa', sans-serif;
+  color: #333;
+  margin: 0 0 3rem 0; /* bottom spacing between paragraphs and next h2 */
+  max-width: 1000px;
+}
+
+/* Add consistent spacing from hero to top of first section */
+.site-content.container {
+  margin-top: 4rem;  /* adjust for spacing after hero */
+  margin-bottom: 4rem; /* spacing before footer */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-banner {
+    padding: 4rem 0;
+  }
+
+  .about-intro {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem; /* spacing between photo and text */
+  }
+
+  .about-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-section h2 {
+    text-align: center;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .about-section p {
+    margin: 0 0 2rem 0;
+  }
+
+  .site-content.container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-banner {
+    padding: 3rem 0;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+}

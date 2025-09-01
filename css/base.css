@@ -1,0 +1,48 @@
+:root {
+    --white: #FFF;
+    --olive: #6E7C4F;
+    --olive-dark: #475135;
+    --sage: #A7B89E;
+    --buttery-yellow: #FFF7DC;
+    --text-main: #44422F;
+    --text-soft: #7A7D6B;
+    --cta-yellow: #FCE794;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--beige);
+    color: var(--text-main);
+    font-family: 'Comfortaa', Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.075rem;
+    line-height: 1.6;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Updated body styles - removed flex that was causing issues */
+body {
+    min-height: 100vh;
+    /* Remove these lines that were causing the problem:
+    display: flex;
+    flex-direction: column; */
+}
+
+a {
+    color: var(--olive-dark);
+    text-decoration: none;
+}
+
+/* Container used in header nav & general layout */
+.container {
+    width: 100vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2.2rem;
+    padding: 0;
+}

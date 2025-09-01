@@ -1,0 +1,146 @@
+header {
+    /* #fcf8ed */
+    background-color: #fcf8ed;
+    box-shadow: 0 2px 12px rgba(168, 182, 161, 0.08);
+    border-bottom: 3px solid var(--buttery-yellow);
+    padding: 2.2rem 0 1.5rem 0;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 2rem;
+}
+
+.site-title {
+    font-weight: 400;
+    font-family: 'Begum Medium';
+    font-size: 2.2rem;
+    color: var(--olive-dark);
+    letter-spacing: 2px;
+    margin: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    line-height: 1.1;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.site-logo {
+    height: 120px;
+    width: auto;
+    margin-right: 0.5rem;
+    margin-left: -150px;
+}
+
+nav {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    align-items: center;
+}
+
+nav a {
+    font-family: 'Begum Medium';
+    font-weight: 500;
+    font-size: 1.50rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--buttery-yellow);
+    color: var(--olive-dark);
+    outline: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    font-family: 'Begum Medium';
+    font-weight: 500;
+    font-size: 1.50rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    color: inherit;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    background-color: var(--buttery-yellow);
+    color: var(--olive-dark);
+    outline: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 14px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    font-family: 'Begum Medium';
+    text-transform: none;
+    letter-spacing: normal;
+    border-radius: 0;
+    line-height: 1.4; /* Add line height for better spacing */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    nav a, .dropdown-toggle {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.52rem;
+    }
+    .site-title {
+        font-size: 1.15rem;
+    }
+    .site-logo {
+        height: 80px;
+        margin-left: -100px;
+    }
+    .container {
+        padding: 0 1rem;
+    }
+}

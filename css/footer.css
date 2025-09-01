@@ -1,0 +1,89 @@
+footer {
+    background-color: #fcf8ed;
+    padding: 2em 1em 1.5em 1em;
+    text-align: center;
+    font-size: 1rem;
+    border-top: 2px solid var(--beige);
+    margin-top: 0 !important;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.footer-connect {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2.3rem;
+    margin-bottom: 1.2em;
+    flex-wrap: wrap;
+}
+
+.footer-ig {
+    display: flex;
+    align-items: center;
+    gap: 0.45em;
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+.footer-ig img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    vertical-align: middle;
+    filter: drop-shadow(0 1px 3px #aaa2);
+    transition: transform 0.13s;
+}
+
+.footer-ig img:hover {
+    transform: scale(1.1) rotate(-10deg);
+}
+
+.footer-item {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 0.65em 1.25em 0.65em 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.03em;
+    font-family: 'Comfortaa', Arial, sans-serif;
+    box-shadow: 0 2px 10px #e6deb5a0;
+    margin: 0 0.13em;
+    transition: box-shadow 0.16s;
+}
+
+.footer-item:hover {
+    box-shadow: 0 4px 16px #ece2b8c0;
+}
+
+.footer-location {
+    margin-top: 1.2em;
+    font-size: 1.07em;
+    color: var(--olive);
+    letter-spacing: 0.01em;
+    font-family: 'Comfortaa', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    opacity: 0.96;
+}
+
+.footer-copy {
+    margin-top: 1.5em;
+    font-size: 0.98em;
+    color: var(--text-soft);
+    letter-spacing: 0.06em;
+}
+
+@media (max-width: 650px) {
+    .footer-connect {
+        flex-direction: column;
+        gap: 1.1rem;
+    }
+    .footer-location {
+        font-size: 0.97em;
+    }
+}

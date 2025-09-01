@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prenatal and Postnatal Fitness Classes | Floor & Core</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional pelvic floor therapy with proven results. Start with a free discovery call." />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/pelvic-floor.css" />
+</head>
+<body>
+<!-- HEADER -->
+<div id="nav-placeholder"></div>
+
+<!-- MAIN CONTENT -->
+<div class="main-container">
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1 class="hero-title">Transform Your Health</h1>
+      <p class="hero-subtitle">Pelvic floor physical therapy with proven results</p>
+    </div>
+  </section>
+
+  <section class="timeline-container">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h2 class="step-title">Free Discovery Call</h2>
+          <p class="step-description">
+            Not sure if pelvic floor physical therapy is right for you? Book a free 10-minute discovery call and let's talk about your symptoms, questions, and goals — together we'll figure out the best next step.
+          </p>
+          <!-- <button class="action-button" onclick="openModal()">Submit a discovery call request</button> -->
+          <a href="/contact.html" class="action-button">Click to get in contact</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h2 class="step-title">Initial Consult</h2>
+          <p class="step-description">
+            This 60-minute one-on-one session is fully personalized to you. We'll review your medical history, current symptoms, and discuss how your anatomy and physiology relate to what you're experiencing. The session may include manual therapy, movement assessment, and therapeutic exercises based on your needs. Together, we'll create a plan to address the root causes and support your goals.
+          </p>
+          <ul class="step-features">
+            <li>Available in-person at our Hoboken office, virtually, or through an in-home visit.</li>
+          </ul>
+          <!-- <button class="action-button">Schedule Assessment</button> -->
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h2 class="step-title">Follow Up Appointments</h2>
+          <p class="step-description">
+            At your initial consultation, we'll determine a follow-up plan that works for you. Some may benefit from more frequent visits at first, while others may do well with more spaced-out sessions. Each follow-up is focused on building your confidence, self-management tools, and steady progress toward your goals.
+          </p>
+          <ul class="step-features">
+            <li>Available in-person at our Hoboken office, virtually, or through an in-home visit.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- Modal -->
+<div id="chatModal" class="modal-overlay">
+  <div class="modal-content">
+    <button id="closeModal" class="modal-close" aria-label="Close">&times;</button>
+    <h2 class="modal-title">Let's Chat</h2>
+    <form id="chatForm" class="modal-form">
+      <label>
+        Name:<br />
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email:<br />
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Phone:<br />
+        <input type="tel" name="phone" required>
+      </label>
+      <label>
+        Tell us your story:<br />
+        <textarea name="story" rows="4" required placeholder="Share anything you'd like us to know..."></textarea>
+      </label>
+      <button type="submit" class="action-button">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/pelvic-floor.js"></script>
+<script>
+  $(function(){
+    $("#nav-placeholder").load("/nav.html");
+    $("#footer-placeholder").load("/footer.html");
+  });
+</script>
+</body>
+</html>
