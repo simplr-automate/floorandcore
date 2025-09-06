@@ -259,20 +259,19 @@ nav a:focus {
       transform: rotate(90deg);
   }
 
-  .dropdown-content {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      padding-left: 1rem;
-      gap: 0.5rem;
-      background: none;
-      position: relative; /* keeps content in flow */
-      box-shadow: none;   /* remove desktop shadow */
-      min-width: unset;   /* remove desktop min-width */
-  }
-  .dropdown.active .dropdown-content {
-      display: flex; /* pushes following links down */
-  }
+  /* Mobile dropdown fix */
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 0.5rem;
+  gap: 0.5rem;
+  background: none;
+  position: relative; /* key change */
+}
+.dropdown.active .dropdown-content {
+  display: flex;
+}
 
   .dropdown-content a {
       padding: 0.5rem 0;
