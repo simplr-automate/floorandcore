@@ -1,19 +1,17 @@
-// Mobile hamburger toggle
 const menuBtn = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
+// Mobile menu open/close
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("open");
   navLinks.classList.toggle("open");
 });
 
 // Mobile dropdown toggle
-const dropdowns = document.querySelectorAll(".dropdown");
-
-dropdowns.forEach(drop => {
-  const toggle = drop.querySelector(".dropdown-toggle");
+document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
   toggle.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevent menu from closing
-    drop.classList.toggle("active"); // toggle expand/collapse
+    e.preventDefault(); // prevent default button behavior
+    const dropdown = toggle.parentElement;
+    dropdown.classList.toggle("active");
   });
 });
