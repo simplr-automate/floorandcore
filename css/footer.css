@@ -78,12 +78,58 @@ footer {
     letter-spacing: 0.06em;
 }
 
-@media (max-width: 650px) {
-    .footer-connect {
-        flex-direction: column;
-        gap: 1.1rem;
-    }
-    .footer-location {
-        font-size: 0.97em;
-    }
+/* Existing footer styles remain above */
+
+/* --- Mobile tweaks --- */
+@media (max-width: 768px) {
+  footer {
+    padding: 1.5em 1em;
+    text-align: center;
+  }
+
+  .footer-connect {
+    flex-direction: column;   /* stack vertically */
+    align-items: stretch;     /* full width buttons */
+    gap: 1rem;
+  }
+
+  .footer-item {
+    justify-content: center;  /* center icons & text */
+    width: 100%;              /* full width for touch targets */
+    font-size: 1rem;
+    padding: 0.8em 1.2em;
+  }
+
+  .footer-ig img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer-location {
+    margin-top: 1.5em;
+    font-size: 1rem;
+    text-align: center;
+    flex-wrap: wrap; /* prevent overflow */
+  }
+
+  .footer-copy {
+    margin-top: 1.2em;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 450px) {
+  .footer-item {
+    font-size: 0.95rem;       /* keep text readable but compact */
+    padding: 0.75em 1em;
+  }
+
+  .footer-location {
+    font-size: 0.9rem;
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+  }
 }
