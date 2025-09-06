@@ -503,6 +503,13 @@
 
 /* Tablets & small laptops */
 @media (max-width: 900px) {
+  .site-content {
+    display: grid;
+    grid-template-columns: 1fr; /* stack columns */
+    gap: 3rem;
+    padding: 3rem 2rem;
+  }
+
   .left-section {
     flex-direction: column;
     align-items: center;
@@ -531,6 +538,7 @@
   }
 
   .content-wrapper {
+    width: 100%;
     padding: 2rem;
   }
 
@@ -559,13 +567,17 @@
 /* Small phones */
 @media (max-width: 480px) {
   .site-content {
+    display: flex;
+    flex-direction: column;  /* stack left-section and content-wrapper */
     padding: 2rem 1rem;
+    gap: 2rem;
   }
 
-  /* LEFT SECTION ROW LAYOUT: LOGO + GALLERY */
+  /* Logo + gallery side by side */
   .left-section {
-    flex-direction: row;        /* Logo + gallery side by side */
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 1rem;
     width: 100%;
@@ -585,7 +597,6 @@
 
   .photo-gallery {
     flex: 1 1 auto;
-    max-width: calc(100% - 110px); /* Adjust for logo width + gap */
     height: 200px;
   }
 
@@ -593,13 +604,18 @@
     height: 100%;
   }
 
-  /* CONTENT WRAPPER */
+  /* Content wrapper full width */
   .content-wrapper {
+    width: 100%;
     padding: 1.25rem;
     border-radius: 20px;
   }
 
-  /* SERVICE ITEMS */
+  /* Services list spans full width */
+  .services-list {
+    width: 100%;
+  }
+
   .service-item {
     padding: 1.25rem;
     gap: 1rem;
@@ -609,7 +625,7 @@
     font-size: 0.9rem;
   }
 
-  /* CTA */
+  /* CTA button & section adjustments */
   .cta-button {
     padding: 1rem 2.5rem;
     font-size: 1rem;
@@ -619,7 +635,7 @@
     padding: 2rem 1.5rem;
   }
 
-  /* HERO TITLE */
+  /* Hero title adjustments */
   .hero-title {
     font-size: 2rem;
     line-height: 1.3;
