@@ -113,60 +113,56 @@
     outline-offset: 2px;
 }
 
-/* Mobile responsiveness */
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
 
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
+  .hero-title {
+      font-size: 2.5rem;
+  }
+  .hero-subtitle {
+      font-size: 1.2rem;
+  }
+  .hero-banner {
+      padding: 4rem 0;
+  }
 
-    .hero-banner {
-        padding: 4rem 0;
-    }
-
-    .coming-soon-container {
-        padding: 3rem 1.5rem;
-        min-height: 50vh;
-    }
-
-    .coming-soon-container h2 {
-        font-size: 2rem;
-    }
-
-    .coming-soon-container p {
-        font-size: 1.3rem;
-    }
-
-    .coming-soon-container .icon-placeholder {
-        font-size: 4rem;
-    }
+  .coming-soon-container {
+      padding: 3rem 1.5rem;
+      min-height: 50vh;
+  }
+  .coming-soon-container h2 {
+      font-size: 2rem;
+  }
+  .coming-soon-container p {
+      font-size: 1.3rem;
+  }
+  .coming-soon-container .icon-placeholder {
+      font-size: 4rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
 
-    .hero-subtitle {
-        font-size: 1rem;
-    }
+  .hero-title {
+      font-size: 2rem;
+  }
+  .hero-subtitle {
+      font-size: 1rem;
+  }
+  .hero-banner {
+      padding: 3rem 0;
+  }
+  .hero-content {
+      padding: 0 1rem;
+  }
 
-    .hero-banner {
-        padding: 3rem 0;
-    }
-
-    .hero-content {
-        padding: 0 1rem;
-    }
-
-    .coming-soon-container h2 {
-        font-size: 1.8rem;
-    }
-
-    .coming-soon-container p {
-        font-size: 1.2rem;
-    }
+  .coming-soon-container h2 {
+      font-size: 1.8rem;
+  }
+  .coming-soon-container p {
+      font-size: 1.2rem;
+  }
+  .coming-soon-container .icon-placeholder {
+      font-size: 3.5rem;
+  }
 }
