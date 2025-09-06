@@ -151,6 +151,25 @@ nav a:focus {
 
 /* Mobile Styles */
 @media (max-width: 900px) {
+    /* Logo fix */
+  .site-logo {
+    height: 60px;     /* smaller on mobile */
+    margin-left: 0;   /* remove negative margin */
+    margin-right: 0;
+  }
+
+  .site-title {
+    font-size: 1rem;  /* optional: scale down text if needed */
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
   nav.nav-links {
     position: fixed;
     top: 0;
