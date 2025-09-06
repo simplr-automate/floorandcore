@@ -632,10 +632,13 @@
     font-size: 0.9rem;
   }
 
-  /* CTA button & section adjustments */
+  /* CTA button adjustments */
   .cta-button {
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
+    width: 100%;            /* full width */
+    padding: 1rem 1.5rem;   /* smaller horizontal padding */
+    font-size: 1rem;        /* keep text readable */
+    text-align: center;     /* center the text */
+    box-sizing: border-box; /* include padding in width */
   }
 
   .cta-section {
