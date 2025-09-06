@@ -573,9 +573,9 @@
     align-items: flex-start;
     gap: 1rem;
     width: 100%;
-    position: sticky; /* keep it sticky */
+    position: static; /* remove sticky */
     top: 1rem;        /* adjust as needed */
-    z-index: 10;      /* make sure it stays above content */
+    z-index: auto;
     background: transparent; /* optional if needed */
   }
 
