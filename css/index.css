@@ -566,14 +566,6 @@
 
 /* Small phones */
 @media (max-width: 480px) {
-  .site-content {
-    display: flex;
-    flex-direction: column;  /* stack left-section and content-wrapper */
-    padding: 2rem 1rem;
-    gap: 2rem;
-  }
-
-  /* Logo + gallery side by side */
   .left-section {
     display: flex;
     flex-direction: row;
@@ -581,6 +573,10 @@
     align-items: flex-start;
     gap: 1rem;
     width: 100%;
+    position: sticky; /* keep it sticky */
+    top: 1rem;        /* adjust as needed */
+    z-index: 10;      /* make sure it stays above content */
+    background: transparent; /* optional if needed */
   }
 
   .logo-section {
@@ -590,14 +586,21 @@
     align-items: center;
   }
 
-  .main-logo {
-    width: 100px;
-    height: 100px;
-  }
-
   .photo-gallery {
     flex: 1 1 auto;
     height: 200px;
+  }
+
+  .site-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .main-logo {
+    width: 100px;
+    height: 100px;
   }
 
   .gallery-container {
