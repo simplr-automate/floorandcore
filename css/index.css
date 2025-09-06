@@ -497,46 +497,37 @@
   box-shadow: 0 12px 35px rgba(133, 88, 111, 0.35);
 }
 
-/* Modern Responsive Design */
-@media (max-width: 1024px) {
-  .site-content {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    padding: 4rem 2rem;
-  }
+/* ============================= */
+/* 📱 MOBILE + TABLET RESPONSIVE */
+/* ============================= */
 
+/* Tablets & small laptops */
+@media (max-width: 900px) {
   .left-section {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 3rem;
-  }
-
-  .logo-section {
-    flex: 0 0 auto;
+    gap: 2rem;
   }
 
   .photo-gallery {
-    flex: 1;
-    max-width: 400px;
+    max-width: 100%;
   }
 }
 
+/* Tablets (portrait) */
 @media (max-width: 768px) {
   .site-content {
     padding: 3rem 1.5rem;
     gap: 3rem;
   }
 
-  .left-section {
-    flex-direction: column;
-    gap: 2rem;
+  .main-logo {
+    width: 180px;
+    height: 180px;
   }
 
-  .main-logo {
-    width: 220px;
-    height: 220px;
+  .gallery-container {
+    height: 350px;
   }
 
   .content-wrapper {
@@ -565,14 +556,15 @@
   }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
   .site-content {
     padding: 2rem 1rem;
   }
 
   .main-logo {
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
   }
 
   .gallery-container {
@@ -580,7 +572,8 @@
   }
 
   .content-wrapper {
-    padding: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 20px;
   }
 
   .service-item {
@@ -589,7 +582,7 @@
   }
 
   .service-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .cta-button {
@@ -599,5 +592,10 @@
 
   .cta-section {
     padding: 2rem 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem; /* keep readable */
+    line-height: 1.3;
   }
 }
