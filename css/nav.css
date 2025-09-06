@@ -149,25 +149,26 @@ nav a:focus {
   transition: 0.3s ease;
 }
 
-/* Mobile Styles */
+/* Mobile styles */
 @media (max-width: 900px) {
-    /* Logo adjustments */
     .site-logo {
         height: 60px;
         margin-left: 0;
         margin-right: 0;
     }
-
     .site-title {
         font-size: 1rem;
     }
-
     .container {
         padding: 0 1rem;
     }
-
     body {
         overflow-x: hidden;
+    }
+
+    /* Hamburger visible */
+    .menu-toggle {
+        display: flex;
     }
 
     /* Mobile nav panel */
@@ -183,45 +184,13 @@ nav a:focus {
         align-items: flex-start;
         padding: 6rem 1.5rem 2rem;
         gap: 1.3rem;
-        box-shadow: -2px 0 12px rgba(0,0,0,0.15);
         transition: right 0.3s ease-in-out;
         z-index: 1000;
     }
-
     nav.nav-links.open {
         right: 0;
     }
 
-    /* Hamburger */
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .menu-toggle span {
-        width: 26px;
-        height: 3px;
-        background: var(--olive-dark);
-        border-radius: 3px;
-        transition: 0.3s ease;
-    }
-
-    .menu-toggle.open span:nth-child(1) {
-        transform: rotate(45deg) translateY(8px);
-    }
-    .menu-toggle.open span:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.open span:nth-child(3) {
-        transform: rotate(-45deg) translateY(-8px);
-    }
-
-    /* Mobile nav links */
     nav a {
         font-size: 1.25rem;
         width: 100%;
@@ -238,7 +207,6 @@ nav a:focus {
         justify-content: space-between;
         align-items: center;
         padding-right: 1rem;
-        cursor: pointer;
     }
 
     .dropdown-content {
@@ -258,12 +226,10 @@ nav a:focus {
     .dropdown-toggle .arrow {
         transition: transform 0.3s ease;
     }
-
     .dropdown.active .dropdown-toggle .arrow {
         transform: rotate(90deg);
     }
 
-    /* Remove dropdown hover effect on mobile */
     .dropdown:hover .dropdown-content {
         display: none;
     }
