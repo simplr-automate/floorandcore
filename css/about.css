@@ -119,10 +119,6 @@
   margin-bottom: 4rem; /* spacing before footer */
 }
 
-/* ============================= */
-/* 📱 MOBILE + TABLET RESPONSIVE */
-/* ============================= */
-
 /* Tablets & small laptops */
 @media (max-width: 768px) {
   /* Hero adjustments */
@@ -141,28 +137,33 @@
   /* About section: stack photo and text */
   .about-intro {
     flex-direction: column;
-    text-align: center;
-    align-items: center;
+    text-align: left;      /* text aligned left */
+    align-items: flex-start; /* keep text on left */
     gap: 2rem;
   }
 
   .about-photo {
     width: 200px;
     height: 200px;
+    border-radius: 50%;    /* force perfect circle */
+    object-fit: cover;     /* ensure image doesn't stretch */
+    margin: 0 auto;        /* center the image */
   }
 
   .about-text {
     width: 100%;
+    text-align: left;      /* text aligned left */
   }
 
   .about-section h2 {
-    text-align: center;
     font-size: 1.75rem;
+    text-align: left;
   }
 
   .about-section p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
+    text-align: left;
   }
 
   .site-content.container {
@@ -195,29 +196,35 @@
   /* About section */
   .about-intro {
     flex-direction: column;
-    text-align: center;
+    text-align: left;         /* text aligned left */
+    align-items: flex-start;  /* keep text on left */
     gap: 1.5rem;
   }
 
   .about-photo {
     width: 150px;
     height: 150px;
-    margin: 0 auto;
+    border-radius: 50%;       /* perfect circle */
+    object-fit: cover;        /* prevent stretching */
+    margin: 0;                /* align with text */
   }
 
   .about-text {
     width: 100%;
+    text-align: left;         /* text aligned left */
   }
 
   .about-section h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    text-align: left;
   }
 
   .about-section p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    text-align: left;
   }
 
   .site-content.container {
