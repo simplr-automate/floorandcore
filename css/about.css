@@ -119,8 +119,13 @@
   margin-bottom: 4rem; /* spacing before footer */
 }
 
-/* Responsive styles */
+/* ============================= */
+/* 📱 MOBILE + TABLET RESPONSIVE */
+/* ============================= */
+
+/* Tablets & small laptops */
 @media (max-width: 768px) {
+  /* Hero adjustments */
   .hero-title {
     font-size: 2.5rem;
   }
@@ -130,13 +135,15 @@
   }
 
   .hero-banner {
-    padding: 4rem 0;
+    padding: 4rem 2rem;
   }
 
+  /* About section: stack photo and text */
   .about-intro {
     flex-direction: column;
     text-align: center;
-    gap: 2rem; /* spacing between photo and text */
+    align-items: center;
+    gap: 2rem;
   }
 
   .about-photo {
@@ -144,24 +151,33 @@
     height: 200px;
   }
 
+  .about-text {
+    width: 100%;
+  }
+
   .about-section h2 {
     text-align: center;
-    margin: 0 0 1.5rem 0;
+    font-size: 1.75rem;
   }
 
   .about-section p {
-    margin: 0 0 2rem 0;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
   }
 
   .site-content.container {
     margin-top: 3rem;
     margin-bottom: 3rem;
+    padding: 0 1rem;
   }
 }
 
+/* Small phones */
 @media (max-width: 480px) {
+  /* Hero adjustments */
   .hero-title {
     font-size: 2rem;
+    line-height: 1.2;
   }
 
   .hero-subtitle {
@@ -169,10 +185,44 @@
   }
 
   .hero-banner {
-    padding: 3rem 0;
+    padding: 3rem 1rem;
   }
 
   .hero-content {
     padding: 0 1rem;
+  }
+
+  /* About section */
+  .about-intro {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .about-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .site-content.container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 0.75rem;
   }
 }
