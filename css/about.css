@@ -154,6 +154,13 @@
     margin: 0 auto;           /* center image horizontally */
   }
 
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;         /* fill container without stretching */
+  }
+
   .about-text {
     width: 100%;
     text-align: left;         /* keep text left-aligned */
@@ -211,6 +218,13 @@
     border-radius: 50%;        /* perfect circle */
     object-fit: cover;
     margin: 0 auto;            /* center horizontally */
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;         /* ensure perfect circle */
   }
 
   .about-text {
