@@ -514,6 +514,9 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    position: static; /* remove sticky */
+    top: auto;
+    z-index: auto;
   }
 
   .photo-gallery {
@@ -566,6 +569,7 @@
 
 /* Small phones */
 @media (max-width: 480px) {
+  /* Left section (logo + gallery) */
   .left-section {
     display: flex;
     flex-direction: row;
@@ -573,10 +577,10 @@
     align-items: flex-start;
     gap: 1rem;
     width: 100%;
-    position: static; /* remove sticky */
-    top: 1rem;        /* adjust as needed */
+    position: static !important; /* remove sticky */
+    top: auto !important;
     z-index: auto;
-    background: transparent; /* optional if needed */
+    background: transparent;
   }
 
   .logo-section {
