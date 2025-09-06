@@ -13,7 +13,7 @@ const dropdowns = document.querySelectorAll(".dropdown");
 dropdowns.forEach(drop => {
   const toggle = drop.querySelector(".dropdown-toggle");
   toggle.addEventListener("click", (e) => {
-    e.stopPropagation(); // prevent menu close
-    drop.classList.toggle("active");
+    e.stopPropagation(); // prevent menu from closing
+    drop.classList.toggle("active"); // toggle expand/collapse
   });
 });
