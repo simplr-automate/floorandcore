@@ -498,27 +498,45 @@
 }
 
 /* ============================= */
-/* 📱 MOBILE + TABLET RESPONSIVE */
+/* 📱 MOBILE + TABLET RESPONSIVE FIX */
 /* ============================= */
 
 /* Tablets & small laptops */
 @media (max-width: 900px) {
+  .site-content {
+    display: grid;
+    grid-template-columns: 1fr; /* stack left + right */
+    gap: 3rem;
+    padding: 3rem 2rem;
+  }
+
   .left-section {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    position: static; /* remove sticky on mobile */
+    top: auto;
   }
 
   .photo-gallery {
     max-width: 100%;
+  }
+
+  .main-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .gallery-container {
+    height: 400px;
   }
 }
 
 /* Tablets (portrait) */
 @media (max-width: 768px) {
   .site-content {
-    padding: 3rem 1.5rem;
-    gap: 3rem;
+    padding: 2.5rem 1.5rem;
+    gap: 2.5rem;
   }
 
   .main-logo {
@@ -560,6 +578,7 @@
 @media (max-width: 480px) {
   .site-content {
     padding: 2rem 1rem;
+    gap: 2rem;
   }
 
   .main-logo {
