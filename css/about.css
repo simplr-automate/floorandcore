@@ -138,32 +138,37 @@
     padding: 4rem 2rem;
   }
 
-  /* About section: stack photo and text */
+  /* About section */
   .about-intro {
-    flex-direction: column;
-    align-items: center;      /* center image */
-    text-align: left;         /* keep text left-aligned */
+    flex-direction: column;      /* stack photo and text */
+    align-items: center;         /* center photo */
+    text-align: left;            /* keep text left-aligned */
     gap: 2rem;
   }
 
   .about-photo {
     width: 200px;
     height: 200px;
-    border-radius: 50%;       /* perfect circle */
-    object-fit: cover;        /* prevent distortion */
-    margin: 0 auto;           /* center image horizontally */
+    border-radius: 50%;          /* perfect circle */
+    padding: 0;                  /* remove padding that causes oval */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;              /* center image */
+    background: linear-gradient(135deg, #85586F, #8C7D88);
+    box-sizing: border-box;
   }
 
   .about-photo img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: cover;         /* fill container without stretching */
+    object-fit: cover;           /* fill container without stretching */
   }
 
   .about-text {
     width: 100%;
-    text-align: left;         /* keep text left-aligned */
+    text-align: left;
   }
 
   .about-section h2 {
@@ -207,24 +212,29 @@
   /* About section */
   .about-intro {
     flex-direction: column;
-    align-items: center;       /* center image on small phones */
-    text-align: left;          /* text remains left-aligned */
+    align-items: center;         /* center photo */
+    text-align: left;            /* keep text left-aligned */
     gap: 1.5rem;
   }
 
   .about-photo {
     width: 150px;
     height: 150px;
-    border-radius: 50%;        /* perfect circle */
-    object-fit: cover;
-    margin: 0 auto;            /* center horizontally */
+    border-radius: 50%;          /* perfect circle */
+    padding: 0;                  /* remove padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;              /* center horizontally */
+    background: linear-gradient(135deg, #85586F, #8C7D88);
+    box-sizing: border-box;
   }
 
   .about-photo img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: cover;         /* ensure perfect circle */
+    object-fit: cover;           /* fill container without stretching */
   }
 
   .about-text {
