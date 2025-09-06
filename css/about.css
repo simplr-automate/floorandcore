@@ -119,6 +119,10 @@
   margin-bottom: 4rem; /* spacing before footer */
 }
 
+/* ============================= */
+/* 📱 MOBILE + TABLET RESPONSIVE */
+/* ============================= */
+
 /* Tablets & small laptops */
 @media (max-width: 768px) {
   /* Hero adjustments */
@@ -137,22 +141,22 @@
   /* About section: stack photo and text */
   .about-intro {
     flex-direction: column;
-    text-align: left;      /* text aligned left */
-    align-items: flex-start; /* keep text on left */
+    align-items: center;      /* center image */
+    text-align: left;         /* keep text left-aligned */
     gap: 2rem;
   }
 
   .about-photo {
     width: 200px;
     height: 200px;
-    border-radius: 50%;    /* force perfect circle */
-    object-fit: cover;     /* ensure image doesn't stretch */
-    margin: 0 auto;        /* center the image */
+    border-radius: 50%;       /* perfect circle */
+    object-fit: cover;        /* prevent distortion */
+    margin: 0 auto;           /* center image horizontally */
   }
 
   .about-text {
     width: 100%;
-    text-align: left;      /* text aligned left */
+    text-align: left;         /* keep text left-aligned */
   }
 
   .about-section h2 {
@@ -196,22 +200,22 @@
   /* About section */
   .about-intro {
     flex-direction: column;
-    text-align: left;         /* text aligned left */
-    align-items: flex-start;  /* keep text on left */
+    align-items: center;       /* center image on small phones */
+    text-align: left;          /* text remains left-aligned */
     gap: 1.5rem;
   }
 
   .about-photo {
     width: 150px;
     height: 150px;
-    border-radius: 50%;       /* perfect circle */
-    object-fit: cover;        /* prevent stretching */
-    margin: 0;                /* align with text */
+    border-radius: 50%;        /* perfect circle */
+    object-fit: cover;
+    margin: 0 auto;            /* center horizontally */
   }
 
   .about-text {
     width: 100%;
-    text-align: left;         /* text aligned left */
+    text-align: left;
   }
 
   .about-section h2 {
