@@ -23,6 +23,7 @@ html, body {
     color: var(--text-main);
     scroll-behavior: smooth;
     box-sizing: border-box;
+    overflow-x: hidden; /* global horizontal scroll fix */
 }
 
 /* Make all elements inherit border-box */
@@ -35,158 +36,180 @@ a {
     color: var(--olive-dark);
     text-decoration: none;
 }
+
+/* ============================= */
+/* 🌟 NAVIGATION FIXES FOR MOBILE HAMBURGER */
+/* ============================= */
+#nav-placeholder {
+    position: relative;
+    z-index: 20; /* above hero */
+}
+
+.menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 25; /* ensures clickable */
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--olive-dark);
+    border-radius: 2px;
+}
+
 /* ============================= */
 /* 🌟 Hero Banner */
 /* ============================= */
 .hero-banner {
-  background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 100%);
-  padding: clamp(3rem, 6vw, 6rem) 1rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  width: 100vw;          /* prevent horizontal overflow */
-  box-sizing: border-box; /* include padding in width */
+    background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 100%);
+    padding: clamp(3rem, 6vw, 6rem) 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* behind nav */
+    overflow: hidden;
+    width: 100vw;          
 }
 
 .hero-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.1);
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.1);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  box-sizing: border-box;
+    position: relative;
+    z-index: 2; /* ensure above hero overlay but below nav */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
+/* Hero text */
 .hero-title {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: white;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  font-weight: 300;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-  color: white;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    color: white;
 }
 
 /* ============================= */
 /* 🌟 About Section */
 /* ============================= */
 .site-content.container {
-  margin: clamp(2rem, 5vw, 4rem) auto;
-  padding: 0 1rem;
-  width: 100vw;            /* ensure no overflow */
-  box-sizing: border-box;
+    margin: clamp(2rem, 5vw, 4rem) auto;
+    padding: 0 1rem;
+    width: 100%; /* use 100% for safe layout */
 }
 
 /* Flex layout for photo + text */
 .about-intro {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse; /* photo on right by default */
-  align-items: flex-end;
-  gap: clamp(1rem, 2vw, 2rem); /* safer gap to avoid overflow */
-  margin: 3rem 0;
-  width: 100%;               /* ensure it stays within container */
-  box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse; /* photo on right */
+    align-items: flex-end;
+    gap: clamp(1rem, 2vw, 2rem);
+    margin: 3rem 0;
+    width: 100%;
 }
 
-/* Circular photo with animated gradient border */
+/* Circular photo with gradient border */
 .about-photo {
-  flex: 0 0 auto;
-  width: clamp(150px, 30vw, 280px);
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-  padding: clamp(3px, 0.8vw, 6px);
-  background: linear-gradient(135deg, #85586F, #8C7D88);
-  background-size: 300% 300%;
-  animation: gradientShift 8s ease infinite;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  margin: 0 auto;
+    flex: 0 0 auto;
+    width: clamp(150px, 30vw, 280px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    padding: clamp(3px, 0.8vw, 6px);
+    background: linear-gradient(135deg, #85586F, #8C7D88);
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    margin: 0 auto;
 }
 
 .about-photo img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
-  display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Gradient animation */
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Text content */
 .about-text {
-  flex: 1;
-  min-width: 250px;
-  box-sizing: border-box; /* make sure padding doesn’t overflow */
+    flex: 1;
+    min-width: 250px;
 }
 
 /* Headings */
 .about-section h2 {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  color: #040404;
-  letter-spacing: 0.05em;
-  margin: 0 0 1rem 0;
-  user-select: none;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: #040404;
+    letter-spacing: 0.05em;
+    margin: 0 0 1rem 0;
 }
 
 /* Paragraphs */
 .about-section p {
-  font-family: 'Comfortaa', sans-serif;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  line-height: 1.7;
-  color: #333;
-  margin: 0 0 2rem 0;
-  max-width: 60ch;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 2rem 0;
+    max-width: 60ch;
 }
 
 /* ============================= */
 /* 📱 Mobile Adjustments */
-/* ============================= */
 @media (max-width: 768px) {
-  .about-intro {
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    gap: 1.5rem;
-    width: 100%;          /* ensure flex container fits screen */
-    box-sizing: border-box;
-  }
+    .about-intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        gap: 1.5rem;
+    }
 
-  .about-text {
-    width: 100%;
-    box-sizing: border-box;
-  }
+    .about-text {
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
 }
 
 /* ============================= */
-/* 🔧 Universal Overflow Fix */
-/* ============================= */
+/* Universal Overflow Fix */
 html, body {
-  overflow-x: hidden; /* prevent horizontal scroll globally */
+    overflow-x: hidden;
 }
