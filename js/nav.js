@@ -2,16 +2,16 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-// Toggle hamburger + nav
+// Hamburger toggle
 menuToggle.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('open');
   menuToggle.classList.toggle('open');
   menuToggle.setAttribute('aria-expanded', isOpen);
 
-  // Prevent body scroll when menu is open
+  // Prevent body scroll
   document.body.style.overflow = isOpen ? 'hidden' : '';
 
-  // Close dropdowns when closing menu
+  // Close all dropdowns when nav closes
   if (!isOpen) {
     dropdownToggles.forEach(toggle => {
       toggle.parentElement.classList.remove('active');
@@ -20,7 +20,7 @@ menuToggle.addEventListener('click', () => {
   }
 });
 
-// Mobile dropdown toggle
+// Dropdown toggle on mobile
 dropdownToggles.forEach(toggle => {
   toggle.addEventListener('click', (e) => {
     e.preventDefault();
