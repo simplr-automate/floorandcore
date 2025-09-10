@@ -25,12 +25,10 @@ html, body {
     box-sizing: border-box;
 }
 
-/* Make all elements inherit border-box */
 *, *::before, *::after {
     box-sizing: inherit;
 }
 
-/* Links */
 a {
     color: var(--olive-dark);
     text-decoration: none;
@@ -76,7 +74,7 @@ a {
     margin: 0 0 1rem 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 0.02em;
-    word-break: break-word; /* allow wrapping on small screens */
+    word-break: break-word;
 }
 
 .hero-subtitle {
@@ -103,7 +101,7 @@ a {
     width: 100%;
     min-height: auto !important;
     position: relative;
-    overflow-x: hidden; /* prevent horizontal scroll */
+    overflow-x: hidden;
     box-sizing: border-box;
 }
 
@@ -113,7 +111,7 @@ a {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 1rem; /* safe padding inside container */
+    padding: 0 1rem;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -129,8 +127,8 @@ a {
     box-shadow: 0 8px 32px rgba(71, 81, 53, 0.08);
     border: 1px solid rgba(167, 184, 158, 0.2);
     padding: 0;
-    margin: 0 auto; /* center on mobile */
-    max-width: 100%; /* prevent overflow */
+    margin: 0 auto;
+    max-width: 100%;
     overflow: hidden;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
@@ -151,6 +149,27 @@ a {
     cursor: pointer;
     text-align: left;
     transition: all 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+}
+
+/* Hide iOS native summary marker */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Custom arrow */
+.faq-question::after {
+    content: '⯈'; /* desktop-style arrow */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.faq-question.open::after {
+    transform: rotate(90deg);
 }
 
 .faq-answer {
@@ -182,7 +201,7 @@ a {
     .hero-title {
         font-size: clamp(2rem, 5vw, 2.8rem);
         line-height: 1.2;
-        white-space: normal; /* allow wrapping */
+        white-space: normal;
     }
     .hero-subtitle {
         font-size: clamp(1rem, 2.5vw, 1.2rem);

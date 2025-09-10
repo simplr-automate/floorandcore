@@ -23,7 +23,7 @@ html, body {
     color: var(--text-main);
     scroll-behavior: smooth;
     box-sizing: border-box;
-    overflow-x: hidden; /* global horizontal scroll fix */
+    overflow-x: hidden; /* prevent horizontal scroll globally */
 }
 
 /* Make all elements inherit border-box */
@@ -38,40 +38,16 @@ a {
 }
 
 /* ============================= */
-/* 🌟 NAVIGATION FIXES FOR MOBILE HAMBURGER */
-/* ============================= */
-#nav-placeholder {
-    position: relative;
-    z-index: 20; /* above hero */
-}
-
-.menu-toggle {
-    display: block;
-    position: relative;
-    z-index: 25; /* ensures clickable */
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background-color: var(--olive-dark);
-    border-radius: 2px;
-}
-
-/* ============================= */
-/* 🌟 Hero Banner */
+/* 🌟 HERO BANNER */
 /* ============================= */
 .hero-banner {
     background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 100%);
     padding: clamp(3rem, 6vw, 6rem) 1rem;
     text-align: center;
     position: relative;
-    z-index: 1; /* behind nav */
     overflow: hidden;
     width: 100vw;          
+    box-sizing: border-box; 
 }
 
 .hero-banner::before {
@@ -83,13 +59,13 @@ a {
 
 .hero-content {
     position: relative;
-    z-index: 2; /* ensure above hero overlay but below nav */
+    z-index: 2;
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1rem;
+    box-sizing: border-box;
 }
 
-/* Hero text */
 .hero-title {
     font-family: 'Fredoka', sans-serif;
     font-weight: 800;
@@ -110,26 +86,48 @@ a {
 }
 
 /* ============================= */
-/* 🌟 About Section */
+/* 🌟 HAMBURGER MENU FIX */
+/* ============================= */
+.menu-toggle {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: var(--olive-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ============================= */
+/* 🌟 ABOUT SECTION */
 /* ============================= */
 .site-content.container {
     margin: clamp(2rem, 5vw, 4rem) auto;
     padding: 0 1rem;
-    width: 100%; /* use 100% for safe layout */
+    width: 100vw;            
+    box-sizing: border-box;
 }
 
-/* Flex layout for photo + text */
 .about-intro {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row-reverse; /* photo on right */
+    flex-direction: row-reverse; 
     align-items: flex-end;
-    gap: clamp(1rem, 2vw, 2rem);
+    gap: clamp(1rem, 2vw, 2rem); 
     margin: 3rem 0;
-    width: 100%;
+    width: 100%;               
+    box-sizing: border-box;
 }
 
-/* Circular photo with gradient border */
 .about-photo {
     flex: 0 0 auto;
     width: clamp(150px, 30vw, 280px);
@@ -150,22 +148,22 @@ a {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    aspect-ratio: 1 / 1;
+    display: block;
 }
 
-/* Gradient animation */
 @keyframes gradientShift {
     0%   { background-position: 0% 50%; }
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Text content */
 .about-text {
     flex: 1;
     min-width: 250px;
+    box-sizing: border-box; 
 }
 
-/* Headings */
 .about-section h2 {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
@@ -173,9 +171,9 @@ a {
     color: #040404;
     letter-spacing: 0.05em;
     margin: 0 0 1rem 0;
+    user-select: none;
 }
 
-/* Paragraphs */
 .about-section p {
     font-family: 'Comfortaa', sans-serif;
     font-size: clamp(1rem, 1.5vw, 1.25rem);
@@ -186,30 +184,34 @@ a {
 }
 
 /* ============================= */
-/* 📱 Mobile Adjustments */
+/* 📱 MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     .about-intro {
         flex-direction: column;
         align-items: center;
         text-align: left;
         gap: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .about-text {
         width: 100%;
+        box-sizing: border-box;
     }
 
-    .hero-title {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
-    }
-
-    .hero-subtitle {
-        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    .menu-toggle {
+        width: 36px;
+        height: 36px; /* ensures mobile hamburger stays same as index */
     }
 }
 
-/* ============================= */
-/* Universal Overflow Fix */
-html, body {
-    overflow-x: hidden;
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(1.5rem, 6vw, 2.2rem);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+    }
 }

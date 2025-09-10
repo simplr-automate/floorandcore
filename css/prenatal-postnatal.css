@@ -36,7 +36,8 @@ a {
     text-decoration: none;
 }
 
-/* Hero Banner */
+/* ============================= */
+/* HERO BANNER */
 .hero-banner {
   background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 50%, #ac7d88 100%);
   padding: 6rem 0;
@@ -83,14 +84,20 @@ a {
   color: white;
 }
 
-.site-content {
+/* ============================= */
+/* SITE CONTENT AREA - ALWAYS WHITE */
+.site-content,
+.coming-soon-container {
     width: 100%;
     margin: 0;
-    padding: 0;
+    background: var(--white); /* ensures white background on all screens */
+    box-sizing: border-box;
 }
 
+/* ============================= */
+/* COMING SOON / MAIN CONTENT */
 .coming-soon-container {
-    min-height: 60vh; /* Reduced since we now have hero banner */
+    min-height: 60vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,14 +106,12 @@ a {
     padding: 4rem 2rem;
     font-family: 'Comfortaa', sans-serif;
     color: #333;
-    width: 100%;
-    margin: 0 auto;
 }
 
-.coming-soon-container h2 { /* Changed from h1 to h2 since h1 is now in hero */
+.coming-soon-container h2 {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
-    font-size: 2.5rem; /* Slightly smaller since it's now secondary */
+    font-size: 2.5rem;
     color: #040404;
     margin-bottom: 1.5rem;
 }
@@ -125,10 +130,9 @@ a {
     background: linear-gradient(135deg, #ac7d88, #ac7d88);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text; /* For better browser support */
+    background-clip: text; 
 }
 
-/* Button styling */
 .coming-soon-container a {
     display: inline-block;
     margin-top: 1rem;
@@ -151,9 +155,9 @@ a {
     outline-offset: 2px;
 }
 
+/* ============================= */
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-
   .hero-title {
       font-size: 2.5rem;
   }
@@ -167,6 +171,7 @@ a {
   .coming-soon-container {
       padding: 3rem 1.5rem;
       min-height: 50vh;
+      background: var(--white); /* enforce white background on mobile */
   }
   .coming-soon-container h2 {
       font-size: 2rem;
@@ -180,7 +185,6 @@ a {
 }
 
 @media (max-width: 480px) {
-
   .hero-title {
       font-size: 2rem;
   }
@@ -202,5 +206,8 @@ a {
   }
   .coming-soon-container .icon-placeholder {
       font-size: 3.5rem;
+  }
+  .coming-soon-container {
+      background: var(--white); /* enforce white background on small screens */
   }
 }
