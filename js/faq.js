@@ -6,21 +6,32 @@ document.addEventListener('DOMContentLoaded', () => {
       const answer = document.getElementById(button.getAttribute('aria-controls'));
       const expanded = button.getAttribute('aria-expanded') === 'true';
 
-      // Close all other answers
+      // Close all others
       document.querySelectorAll('.faq-answer').forEach(a => {
         if (a !== answer) {
+          a.style.maxHeight = null;
           a.classList.remove('open');
-          a.previousElementSibling.setAttribute('aria-expanded', 'false');
-          const arrow = a.previousElementSibling.querySelector('.arrow');
-          if (arrow) arrow.style.transform = 'rotate(0deg)';
+          const btn = a.previousElementSibling;
+          btn.setAttribute('aria-expanded', 'false');
         }
       });
 
       // Toggle clicked answer
       button.setAttribute('aria-expanded', String(!expanded));
-      answer.classList.toggle('open', !expanded);
-      const arrow = button.querySelector('.arrow');
-      if (arrow) arrow.style.transform = !expanded ? 'rotate(90deg)' : 'rotate(0deg)';
+      if (!expanded) {
+        answer.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.classList.remove('open');
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+
+  // Adjust max-height on window resize
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.faq-answer.open').forEach(answer => {
+      answer.style.maxHeight = answer.scrollHeight + "px";
     });
   });
 });
