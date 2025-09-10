@@ -1,14 +1,6 @@
 // index.js
 
 // =============================
-// Load nav and footer
-// =============================
-$(function () {
-  $("#nav-placeholder").load("/nav.html");
-  $("#footer-placeholder").load("/footer.html");
-});
-
-// =============================
 // Modal + Form Handling
 // =============================
 document.addEventListener('DOMContentLoaded', () => {
