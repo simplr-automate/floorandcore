@@ -79,7 +79,6 @@ button:focus {
 
 /* ============================= */
 /* 🌎 LAYOUT HELPERS */
-/* ============================= */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -102,7 +101,6 @@ button:focus {
 
 /* ============================= */
 /* 🌟 HERO BANNER */
-/* ============================= */
 .hero-banner {
   background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 50%, #ac7d88 100%);
   padding: clamp(3rem, 8vw, 6rem) 1rem;
@@ -150,7 +148,6 @@ button:focus {
 
 /* ============================= */
 /* 🌟 MAIN CONTAINER */
-/* ============================= */
 .main-container {
   flex: 1;
   background: url('/assets/images/icons/studioPic.jpg') center/cover no-repeat;
@@ -162,7 +159,6 @@ button:focus {
 
 /* ============================= */
 /* 🌟 TESTIMONIAL SLIDER */
-/* ============================= */
 .testimonial-slider {
   position: relative;
   overflow: hidden;
@@ -210,7 +206,6 @@ button:focus {
 
 /* ============================= */
 /* 🌟 NAVIGATION DOTS */
-/* ============================= */
 .nav-buttons {
   display: flex;
   justify-content: center;
@@ -242,73 +237,7 @@ button:focus {
 }
 
 /* ============================= */
-/* 🌟 NAV BAR (DESKTOP + MOBILE) */
-/* ============================= */
-/* copy of nav.css styles for nav-placeholder to work */
-header {
-  background-color: #fcf8ed;
-  box-shadow: 0 2px 12px rgba(168, 182, 161, 0.08);
-  border-bottom: 3px solid var(--buttery-yellow);
-  padding: 2.2rem 0 1.5rem 0;
-  width: 100%;
-  z-index: 1000;
-  position: relative;
-}
-
-nav.nav-links {
-  display: flex;
-  gap: 1rem;
-  margin-left: auto;
-  align-items: center;
-}
-
-/* hamburger for mobile */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.menu-toggle span {
-  width: 26px;
-  height: 3px;
-  background: var(--olive-dark);
-  border-radius: 3px;
-  transition: 0.3s ease;
-}
-
-.menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
-.menu-toggle.open span:nth-child(2) { opacity: 0; }
-.menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
-
-@media (max-width: 900px) {
-  .menu-toggle { display: flex; }
-  nav.nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100%;
-    width: 80%;
-    max-width: 360px;
-    background: #fcf8ed;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 6rem 1.5rem 2rem;
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
-    overflow-y: auto;
-  }
-  nav.nav-links.open { right: 0; }
-}
-
-/* ============================= */
-/* 🌟 FOOTER (DESKTOP + MOBILE) */
-/* ============================= */
-/* copy of footer.css styles for footer-placeholder */
+/* 🌟 FOOTER */
 footer {
   background-color: #fcf8ed;
   padding: 1.5em 1em;
@@ -371,6 +300,8 @@ footer {
   line-height: 1.5;
 }
 
+/* ============================= */
+/* 🌎 RESPONSIVE FOOTER & HERO */
 @media (min-width: 769px) {
   .footer-connect {
     flex-direction: row;
