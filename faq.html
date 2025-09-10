@@ -7,17 +7,18 @@
   <meta name="description" content="Frequently Asked Questions about Floor & Core services." />
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/faq.css" />
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Navigation - should be first -->
   <div id="nav-placeholder"></div>
 
   <!-- MAIN CONTENT -->
   <div class="main-container">
-    <!-- HERO -->
     <section class="hero-banner">
       <div class="hero-content">
         <h1 class="hero-title">Transform Your Health</h1>
@@ -25,12 +26,19 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section that will flex to fill remaining space -->
     <div class="faq-section">
+      <!-- Background and mist for FAQ section -->
+      <div class="faq-background">
+        <div class="faq-mist"></div>
+      </div>
+
+      <!-- FAQ Content -->
       <main class="site-content container" role="main" aria-label="Frequently Asked Questions">
         <section class="faq-item">
           <button class="faq-question" aria-expanded="false" aria-controls="answer4" id="q4">
             Do you accept insurance?
+            <span class="arrow" aria-hidden="true">▶</span>
           </button>
           <div id="answer4" class="faq-answer" role="region" aria-labelledby="q4" hidden>
             I can provide you with a superbill to submit for reimbursement for individual physical therapy sessions. The prenatal and postnatal fitness classes are not covered by insurance.
@@ -39,6 +47,7 @@
         <section class="faq-item">
           <button class="faq-question" aria-expanded="false" aria-controls="answer5" id="q5">
             Why should I choose Floor & Core?
+            <span class="arrow" aria-hidden="true">▶</span>
           </button>
           <div id="answer5" class="faq-answer" role="region" aria-labelledby="q5" hidden>
             Each session is a full 60 minutes of one-on-one care with a licensed pelvic floor physical therapist. You'll also receive a customized home program and have direct access to Gabby via email or text for support throughout your treatment.
@@ -47,6 +56,7 @@
         <section class="faq-item">
           <button class="faq-question" aria-expanded="false" aria-controls="answer6" id="q6">
             What should I expect on my first visit?
+            <span class="arrow" aria-hidden="true">▶</span>
           </button>
           <div id="answer6" class="faq-answer" role="region" aria-labelledby="q6" hidden>
             We will review your medical history, current symptoms, and discuss your anatomy and physiology. The session may include manual therapy, movement assessment, and therapeutic exercises. Together, we'll create a plan to support your goals.
@@ -55,6 +65,7 @@
         <section class="faq-item">
           <button class="faq-question" aria-expanded="false" aria-controls="answer7" id="q7">
             How often are sessions recommended?
+            <span class="arrow" aria-hidden="true">▶</span>
           </button>
           <div id="answer7" class="faq-answer" role="region" aria-labelledby="q7" hidden>
             At your initial consultation, we'll determine a follow-up plan that works for you. Some may benefit from more frequent visits at first, while others may do well with more spaced-out sessions.
@@ -63,6 +74,7 @@
         <section class="faq-item">
           <button class="faq-question" aria-expanded="false" aria-controls="answer8" id="q8">
             How do I know if pelvic floor physical therapy is for me?
+            <span class="arrow" aria-hidden="true">▶</span>
           </button>
           <div id="answer8" class="faq-answer" role="region" aria-labelledby="q8" hidden>
             Book a free 10-minute discovery call and let's talk about your symptoms, questions, and goals — together we'll figure out the best next step.<br><br>
@@ -70,8 +82,7 @@
           </div>
         </section>
       </main>
-    </div>
-
+    </div> <!-- Close faq-section -->
   </div>
 
   <!-- Footer -->
