@@ -14,25 +14,33 @@
       </a>
 
       <!-- Hamburger button -->
-      <button class="menu-toggle" aria-label="Toggle menu">
+      <button 
+        class="menu-toggle" 
+        aria-label="Toggle menu" 
+        aria-expanded="false" 
+        aria-controls="primary-navigation">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <!-- Navigation links -->
-      <nav class="nav-links">
+      <nav class="nav-links" id="primary-navigation">
         <a href="about.html">ABOUT</a>
+
         <div class="dropdown">
-          <button class="dropdown-toggle">
-            SERVICES
-            <span class="arrow"></span>
+          <button 
+            class="dropdown-toggle" 
+            aria-expanded="false" 
+            aria-controls="services-menu">
+            SERVICES <span class="arrow"></span>
           </button>
-          <div class="dropdown-content">
-            <a href="pelvic-floor.html">Pelvic Floor Physical Therapy</a>
-            <a href="prenatal-postnatal.html">Prenatal and Postnatal Fitness Classes</a>
+          <div class="dropdown-content" id="services-menu" role="menu">
+            <a href="pelvic-floor.html" role="menuitem">Pelvic Floor Physical Therapy</a>
+            <a href="prenatal-postnatal.html" role="menuitem">Prenatal and Postnatal Fitness Classes</a>
           </div>
         </div>
+
         <a href="testimonials.html">TESTIMONIALS</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">CONTACT</a>

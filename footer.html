@@ -1,62 +1,72 @@
-<!-- footer.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Footer</title>
-    <link rel="stylesheet" href="css/footer.css" />
+  <meta charset="UTF-8" />
+  <title>Footer</title>
+  <link rel="stylesheet" href="css/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- your footer content here -->
-    <footer>
-        <div class="footer-connect">
-        <a href="mailto:gabbymajcher@gmail.com" class="footer-item" title="Email Us">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <rect x="2" y="5" width="16" height="10" rx="3" stroke="#A7B89E" stroke-width="1.6"/>
-            <path d="M4 7l6 5.2L16 7" stroke="#A7B89E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            gabby@floorandcore.co
-        </a>
-        <a href="tel:+2012893161" class="footer-item" title="Call Us">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M2.85 4.5A15.47 15.47 0 0 0 15.5 17.15l2.13-2.13a1.17 1.17 0 0 0-.2-1.81l-2.8-1.4a1.18 1.18 0 0 0-1.16.08l-1.47 1.03a10.26 10.26 0 0 1-4.5-4.5l1.03-1.47a1.18 1.18 0 0 0 .07-1.17l-1.4-2.8a1.17 1.17 0 0 0-1.81-.2L2.85 4.5z" stroke="#A7B89E" stroke-width="1.4" fill="none"/>
-            </svg>
-            (201) 289-3161
-        </a>
-        <a href="https://instagram.com/floorandcore.co" class="footer-item footer-ig" target="_blank" title="Instagram" rel="noopener noreferrer">
-            <img src="https://images.squarespace-cdn.com/content/v1/643957c77876cb5e09289bba/3c20cd9a-8b97-40d9-bbe5-45eb5e5a3eda/Instagram_logo_2022.svg.png" alt="Instagram Logo" />
-            @floorandcore.co
-        </a>
-        </div>
-        <div class="footer-location">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M10 18s6-6.66 6-10A6 6 0 1 0 4 8c0 3.34 6 10 6 10z" stroke="#A7B89E" stroke-width="1.4" fill="none"/>
-                <circle cx="10" cy="8" r="2" stroke="#A7B89E" stroke-width="1.2"/>
-            </svg>
-            <a id="mapLink" href="#" target="_blank" rel="noopener noreferrer" title="Open in Maps">
-                1317 Willow Ave, Hoboken NJ, 07030
-            </a>
-        </div>
-        <div class="footer-copy">
-        &copy; 2025 FLOOR &amp; CORE
-        </div>
-    </footer>
+  <footer>
+    <div class="footer-connect">
+      <!-- Email -->
+      <a href="mailto:gabbymajcher@gmail.com" class="footer-item" title="Email us">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <rect x="2" y="5" width="16" height="10" rx="3" stroke="#A7B89E" stroke-width="1.6"/>
+          <path d="M4 7l6 5.2L16 7" stroke="#A7B89E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="sr-only">Email:</span>
+        gabby@floorandcore.co
+      </a>
 
-    <script>
-        const mapLink = document.getElementById('mapLink');
-        const address = encodeURIComponent('1317 Willow Ave, Hoboken NJ 07030');
+      <!-- Phone -->
+      <a href="tel:+2012893161" class="footer-item" title="Call us">
+        <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <path d="M2.85 4.5A15.47 15.47 0 0 0 15.5 17.15l2.13-2.13a1.17 1.17 0 0 0-.2-1.81l-2.8-1.4a1.18 1.18 0 0 0-1.16.08l-1.47 1.03a10.26 10.26 0 0 1-4.5-4.5l1.03-1.47a1.18 1.18 0 0 0 .07-1.17l-1.4-2.8a1.17 1.17 0 0 0-1.81-.2L2.85 4.5z" stroke="#A7B89E" stroke-width="1.4" fill="none"/>
+        </svg>
+        <span class="sr-only">Phone:</span>
+        (201) 289-3161
+      </a>
 
-        // Basic userAgent check for iOS devices
-        const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      <!-- Instagram -->
+      <a href="https://instagram.com/floorandcore.co" 
+         class="footer-item footer-ig" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         title="Instagram">
+        <svg width="22" height="22" viewBox="0 0 448 512" aria-hidden="true" focusable="false">
+          <path fill="#A7B89E" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.8 224.1 370.8 339 319.5 339 255.9 287.7 141 224.1 141zm0 188.6c-40.6 0-73.7-33.1-73.7-73.7s33.1-73.7 73.7-73.7 73.7 33.1 73.7 73.7-33.1 73.7-73.7 73.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9-14.9 0-26.9-12-26.9-26.9s12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9s-58-34.5-93.9-36.2c-37-2.1-147.9-2.1-184.9 0-35.9 1.7-67.7 9.9-93.9 36.2s-34.5 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.5 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2s34.5-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8z"/>
+        </svg>
+        <span class="sr-only">Instagram:</span>
+        @floorandcore.co
+      </a>
+    </div>
 
-        if (isiOS) {
-        // Use Apple Maps URL scheme on iOS
-        mapLink.href = `maps://maps.apple.com/?address=${address}`;
-        } else {
-        // Use Google Maps URL for other devices
-        mapLink.href = `https://maps.google.com/?q=${address}`;
-        }
-    </script>
+    <!-- Location -->
+    <div class="footer-location">
+      <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+        <path d="M10 18s6-6.66 6-10A6 6 0 1 0 4 8c0 3.34 6 10 6 10z" stroke="#A7B89E" stroke-width="1.4" fill="none"/>
+        <circle cx="10" cy="8" r="2" stroke="#A7B89E" stroke-width="1.2"/>
+      </svg>
+      <a id="mapLink" href="#" target="_blank" rel="noopener noreferrer" title="Open in Maps">
+        1317 Willow Ave, Hoboken NJ, 07030
+      </a>
+    </div>
 
+    <!-- Copyright -->
+    <div class="footer-copy">
+      &copy; 2025 FLOOR &amp; CORE
+    </div>
+  </footer>
+
+  <script>
+    const mapLink = document.getElementById('mapLink');
+    const address = encodeURIComponent('1317 Willow Ave, Hoboken NJ 07030');
+    const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    mapLink.href = isiOS
+      ? `maps://maps.apple.com/?address=${address}`
+      : `https://maps.google.com/?q=${address}`;
+  </script>
 </body>
 </html>
