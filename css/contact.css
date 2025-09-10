@@ -1,7 +1,9 @@
-/* Hero Banner */
+/* ============================= */
+/* HERO BANNER */
+/* ============================= */
 .hero-banner {
   background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 50%, #ac7d88 100%);
-  padding: 6rem 0;
+  padding: clamp(4rem, 10vw, 6rem) 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -28,7 +30,7 @@
 .hero-title {
   font-family: 'Fredoka', sans-serif;
   font-weight: 800;
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -37,39 +39,43 @@
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   font-weight: 300;
   margin-bottom: 2rem;
   opacity: 0.95;
   color: white;
 }
 
-/* Main Content */
+/* ============================= */
+/* MAIN CONTENT */
+/* ============================= */
 .site-content {
   width: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
-  font-family: 'Comfortaa', sans-serif;
+  padding: clamp(2rem, 5vw, 4rem);
 }
 
-/* Contact Grid */
+/* ============================= */
+/* CONTACT GRID */
+/* ============================= */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 
 .contact-card {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
   text-align: center;
   box-shadow: 0 8px 32px rgba(71, 81, 53, 0.08);
   border: 1px solid rgba(167, 184, 158, 0.2);
@@ -84,7 +90,7 @@
 }
 
 .contact-icon {
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 5vw, 3rem);
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #ac7d88, #85586F);
   -webkit-background-clip: text;
@@ -95,7 +101,7 @@
 .contact-card h3 {
   font-family: 'Fredoka', sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   color: #475135;
   margin-bottom: 1rem;
 }
@@ -108,7 +114,7 @@
   color: #85586F;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   transition: color 0.3s ease;
 }
 
@@ -118,59 +124,37 @@
 }
 
 .contact-note {
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   color: #666;
   font-style: italic;
 }
 
-/* Instagram + QR Combined Card */
+/* ============================= */
+/* INSTAGRAM + QR COMBINED CARD */
+/* ============================= */
 .instagram-qr-card {
-  grid-column: 1 / -1; /* Spans full width */
+  grid-column: 1 / -1;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 3rem;
-  padding: 2.5rem;
-  min-height: 280px;
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 3rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  min-height: auto;
 }
 
 .instagram-content {
   flex: 1;
   text-align: left;
-}
-
-.instagram-content .contact-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ac7d88, #85586F);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
+  min-width: 220px;
 }
 
 .instagram-content h3 {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: #475135;
-  margin-bottom: 1rem;
-}
-
-.instagram-handle {
-  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 2.5vw, 1.8rem);
 }
 
 .instagram-handle a {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #E4405F;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.instagram-handle a:hover {
-  color: #C13584;
-  transform: scale(1.05);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 
 .qr-content {
@@ -187,11 +171,10 @@
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
   transition: all 0.3s ease;
-  margin-bottom: 1rem;
   border: 1px solid rgba(167, 184, 158, 0.3);
   overflow: hidden;
-  width: 250px;
-  height: 250px;
+  width: clamp(140px, 20vw, 250px);
+  height: clamp(140px, 20vw, 250px);
   display: flex;
 }
 
@@ -204,48 +187,36 @@
 .qr-code {
   width: 100%;
   height: 100%;
-  border-radius: 0;
-  display: block;
   object-fit: cover;
-  object-position: center;
-  margin: 0;
-  padding: 0;
-  border: none;
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  filter: none;
-  background: white;
-  flex: 1;
-  min-width: 0;
-  min-height: 0;
 }
 
-/* Location Section */
+/* ============================= */
+/* LOCATION SECTION */
+/* ============================= */
 .location-section {
-  margin-bottom: 4rem;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 
 .location-section h2 {
   font-family: 'Fredoka', sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   color: #475135;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
 
 .location-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
   align-items: stretch;
 }
 
 .location-info {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
   box-shadow: 0 8px 32px rgba(71, 81, 53, 0.08);
   border: 1px solid rgba(167, 184, 158, 0.2);
   display: flex;
@@ -254,21 +225,18 @@
 }
 
 .location-info h3 {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #475135;
-  margin-bottom: 1rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.5rem);
 }
 
 .address {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.6;
   color: #333;
   margin-bottom: 1.5rem;
 }
 
 .location-details {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   color: #666;
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -284,7 +252,6 @@
   border-radius: 8px;
   font-weight: 600;
   transition: transform 0.3s ease;
-  align-self: flex-start;
 }
 
 .directions-btn:hover {
@@ -300,70 +267,21 @@
 }
 
 .map-container iframe {
+  width: 100%;
   height: 100%;
   min-height: 300px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-title {
-    font-size: 3rem;
-  }
-
-  .location-content {
-    grid-template-columns: 1fr;
-  }
-
+/* ============================= */
+/* RESPONSIVE MEDIA QUERIES (Optional fine-tuning) */
+/* ============================= */
+@media (max-width: 480px) {
   .instagram-qr-card {
     flex-direction: column;
     text-align: center;
-    gap: 2rem;
-    min-height: auto;
+    gap: 1rem;
   }
-
-  .instagram-content {
-    text-align: center;
-  }
-
-  .qr-content {
+  .instagram-content, .qr-content {
     min-width: auto;
   }
-
-  .qr-code-container {
-    width: 160px;
-    height: 160px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .contact-card {
-    padding: 1.5rem;
-  }
-
-  .instagram-qr-card {
-    padding: 1.5rem;
-    gap: 1.5rem;
-  }
-
-  .instagram-content h3 {
-    font-size: 1.5rem;
-  }
-
-  .instagram-handle a {
-    font-size: 1.4rem;
-  }
-
-  .qr-code-container {
-    width: 140px;
-    height: 140px;
-  }
-
 }
