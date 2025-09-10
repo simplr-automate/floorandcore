@@ -1,43 +1,39 @@
 /* ============================= */
-/* 🌎 GLOBAL RESET & BOX-SIZING */
+/* 🌎 ROOT VARIABLES + BASE STYLES */
 /* ============================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+    --white: #FFF;
+    --olive: #6E7C4F;
+    --olive-dark: #475135;
+    --sage: #A7B89E;
+    --buttery-yellow: #FFF7DC;
+    --text-main: #44422F;
+    --text-soft: #7A7D6B;
+    --cta-yellow: #FCE794;
+    --beige: #fcf8ed;
 }
 
 html, body {
-  overflow-x: hidden;
-  width: 100%;
-  min-height: 100vh;
-  font-family: 'Nunito', sans-serif;
-  display: flex;
-  flex-direction: column;
-  background: #fcf8ed; /* light beige background */
-  color: #44422F;
-  line-height: 1.5;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: 'Nunito', sans-serif;
+    background: var(--beige);
+    color: var(--text-main);
+    scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
+/* Make all elements inherit border-box */
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
+/* Links */
 a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
+    color: var(--olive-dark);
+    text-decoration: none;
 }
 
 /* ============================= */
