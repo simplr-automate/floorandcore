@@ -1,8 +1,39 @@
-/* GLOBAL FIX */
+/* ============================= */
+/* 🌎 ROOT VARIABLES + BASE STYLES */
+/* ============================= */
+:root {
+    --white: #FFF;
+    --olive: #6E7C4F;
+    --olive-dark: #475135;
+    --sage: #A7B89E;
+    --buttery-yellow: #FFF7DC;
+    --text-main: #44422F;
+    --text-soft: #7A7D6B;
+    --cta-yellow: #FCE794;
+    --beige: #fcf8ed;
+}
+
 html, body {
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
     width: 100%;
+    min-height: 100%;
+    font-family: 'Nunito', sans-serif;
+    background: var(--beige);
+    color: var(--text-main);
+    scroll-behavior: smooth;
     box-sizing: border-box;
+}
+
+/* Make all elements inherit border-box */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Links */
+a {
+    color: var(--olive-dark);
+    text-decoration: none;
 }
 
 /* ============================= */
