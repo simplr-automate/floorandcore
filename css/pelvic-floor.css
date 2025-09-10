@@ -368,7 +368,7 @@ a { color: var(--olive-dark); text-decoration: none; }
   .hero-subtitle { font-size: 1.2rem; text-align: center; }
   .hero-banner { padding: 4rem 1rem; }
 
-  .timeline::before { left: 2rem; transform: none; }
+  .timeline::before { left: 1rem; transform: none; }
   .timeline-number { left: 2rem; transform: none; width: 50px; height: 50px; font-size: 1.2rem; }
   .timeline-item { flex-direction: column !important; margin-bottom: 3rem; }
   .timeline-content { margin-left: 0 !important; width: 100%; padding: 1.5rem; text-align: center; }
