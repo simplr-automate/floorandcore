@@ -22,6 +22,18 @@ html, body {
     background: var(--beige);
     color: var(--text-main);
     scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+/* Make all elements inherit border-box */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Links */
+a {
+    color: var(--olive-dark);
+    text-decoration: none;
 }
 
 /* ============================= */
