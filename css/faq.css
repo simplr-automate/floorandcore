@@ -166,6 +166,7 @@ summary::-webkit-details-marker {
     transition: transform 0.3s ease;
     display: inline-block;
     margin-left: 1rem;
+    color: black; /* overrides any system emoji color */
 }
 
 .faq-question.open::after {
