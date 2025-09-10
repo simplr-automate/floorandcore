@@ -110,7 +110,9 @@ a {
 /* ============================= */
 /* 🌟 ABOUT SECTION */
 /* ============================= */
+
 .site-content.container {
+    background: var(--white);  /* Set background to white */
     margin: clamp(2rem, 5vw, 4rem) auto;
     padding: 0 1rem;
     width: 100vw;            
