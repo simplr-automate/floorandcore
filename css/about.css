@@ -1,7 +1,9 @@
-/* Hero Banner */
+/* ============================= */
+/* 🌟 Hero Banner */
+/* ============================= */
 .hero-banner {
-  background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 50%, #ac7d88 100%);
-  padding: 6rem 0;
+  background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 100%);
+  padding: clamp(3rem, 6vw, 6rem) 1rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -10,10 +12,7 @@
 .hero-banner::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0,0,0,0.1);
 }
 
@@ -22,14 +21,14 @@
   z-index: 2;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .hero-title {
   font-family: 'Fredoka', sans-serif;
   font-weight: 800;
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -37,37 +36,45 @@
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
   font-weight: 300;
   margin-bottom: 2rem;
   opacity: 0.95;
   color: white;
 }
 
-/* Shared intro section for Gabby */
-.about-intro {
-  display: flex;
-  align-items: flex-end; /* aligns bottom of photo with bottom of text block */
-  gap: 2rem;
-  margin: 3rem 0; /* spacing from nav and above footer */
-  flex-wrap: wrap;
-  flex-direction: row-reverse; /* photo on the right */
+/* ============================= */
+/* 🌟 About Section */
+/* ============================= */
+.site-content.container {
+  margin: clamp(2rem, 5vw, 4rem) auto;
+  padding: 0 1rem;
 }
 
-/* ✨ Modern circular photo with gradient border */
+/* Flex layout for photo + text */
+.about-intro {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse; /* photo on right by default */
+  align-items: flex-end;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* Circular photo with animated gradient border */
 .about-photo {
-  flex: 0 0 280px;
-  width: 280px;
-  height: 280px;
+  flex: 0 0 auto;
+  width: clamp(150px, 30vw, 280px);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  /* Gradient border effect */
-  padding: 6px; /* space for gradient ring */
+  padding: clamp(3px, 0.8vw, 6px); /* thinner on mobile, thicker on desktop */
   background: linear-gradient(135deg, #85586F, #8C7D88);
   background-size: 300% 300%;
   animation: gradientShift 8s ease infinite;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  margin: 0 auto;
 }
 
 .about-photo img {
@@ -75,6 +82,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  aspect-ratio: 1 / 1;
   display: block;
 }
 
@@ -85,179 +93,45 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Text container */
+/* Text content */
 .about-text {
   flex: 1;
   min-width: 250px;
 }
 
-/* Standardize all h2 spacing */
+/* Headings */
 .about-section h2 {
-  font-weight: 700;
-  font-size: 2rem;
   font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   color: #040404;
   letter-spacing: 0.05em;
+  margin: 0 0 1rem 0;
   user-select: none;
-  box-sizing: border-box;
-  margin: 0 0 1.5rem 0; /* bottom spacing */
 }
 
-/* Standardize all paragraph spacing */
+/* Paragraphs */
 .about-section p {
-  font-size: 1.25rem;
-  line-height: 1.8;
   font-family: 'Comfortaa', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
   color: #333;
-  margin: 0 0 3rem 0; /* bottom spacing between paragraphs and next h2 */
-  max-width: 1000px;
-}
-
-/* Add consistent spacing from hero to top of first section */
-.site-content.container {
-  margin-top: 4rem;  /* adjust for spacing after hero */
-  margin-bottom: 4rem; /* spacing before footer */
+  margin: 0 0 2rem 0;
+  max-width: 60ch;
 }
 
 /* ============================= */
-/* 📱 MOBILE + TABLET RESPONSIVE */
+/* 📱 Mobile Adjustments */
 /* ============================= */
-
-/* Tablets & small laptops */
 @media (max-width: 768px) {
-  /* Hero adjustments */
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .hero-banner {
-    padding: 4rem 2rem;
-  }
-
-  /* About section */
-  .about-intro {
-    flex-direction: column;      /* stack photo and text */
-    align-items: center;         /* center photo */
-    text-align: left;            /* keep text left-aligned */
-    gap: 2rem;
-  }
-
-  .about-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;          /* perfect circle */
-    padding: 0;                  /* remove padding that causes oval */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;              /* center image */
-    background: linear-gradient(135deg, #85586F, #8C7D88);
-    box-sizing: border-box;
-  }
-
-  .about-photo img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;           /* fill container without stretching */
-  }
-
-  .about-text {
-    width: 100%;
-    text-align: left;
-  }
-
-  .about-section h2 {
-    font-size: 1.75rem;
-    text-align: left;
-  }
-
-  .about-section p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    text-align: left;
-  }
-
-  .site-content.container {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding: 0 1rem;
-  }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-  /* Hero adjustments */
-  .hero-title {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-banner {
-    padding: 3rem 1rem;
-  }
-
-  .hero-content {
-    padding: 0 1rem;
-  }
-
-  /* About section */
   .about-intro {
     flex-direction: column;
-    align-items: center;         /* center photo */
-    text-align: left;            /* keep text left-aligned */
+    align-items: center;
+    text-align: left;
     gap: 1.5rem;
   }
 
-  .about-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;          /* perfect circle */
-    padding: 0;                  /* remove padding */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;              /* center horizontally */
-    background: linear-gradient(135deg, #85586F, #8C7D88);
-    box-sizing: border-box;
-  }
-
-  .about-photo img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;           /* fill container without stretching */
-  }
-
   .about-text {
     width: 100%;
-    text-align: left;
-  }
-
-  .about-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-
-  .about-section p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    text-align: left;
-  }
-
-  .site-content.container {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 0 0.75rem;
   }
 }
