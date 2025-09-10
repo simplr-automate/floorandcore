@@ -12,24 +12,25 @@
   <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- HEADER / NAV -->
   <div id="nav-placeholder"></div>
 
   <!-- HERO BANNER -->
   <section class="hero-banner">
     <div class="hero-content">
-      <h1 class="hero-title">because every<span class="hero-highlight">BODY</span> has a pelvic floor</h1>
+      <h1 class="hero-title">because every <span class="hero-highlight">BODY</span> has a pelvic floor</h1>
+      <p class="hero-subtitle">Professional pelvic floor therapy for every stage of motherhood.</p>
     </div>
   </section>
 
   <!-- MAIN CONTENT -->
-  <div class="site-content">
+  <main class="site-content">
+    <!-- LEFT SECTION: Logo + Gallery -->
     <div class="left-section">
       <div class="logo-section">
         <img src="assets/images/icons/fcLogoCircle.png" alt="Floor & Core Logo" class="main-logo" />
       </div>
 
-      <!-- Photo Gallery -->
       <div class="photo-gallery">
         <div class="gallery-container">
           <div class="gallery-slide active">
@@ -43,16 +44,15 @@
           </div>
         </div>
 
-        <!-- Gallery indicators -->
         <div class="gallery-indicators">
           <span class="indicator active" data-slide="0"></span>
           <span class="indicator" data-slide="1"></span>
           <span class="indicator" data-slide="2"></span>
-          <span class="indicator" data-slide="3"></span>
         </div>
       </div>
     </div>
 
+    <!-- RIGHT SECTION: Services + CTA -->
     <div class="content-wrapper">
       <div class="services-list">
         <div class="service-item">
@@ -85,32 +85,27 @@
           Not sure if pelvic floor therapy is right for you?<br />
           Book a <strong>FREE discovery call</strong> and let's find out together.
         </p>
-        <!-- <button class="cta-button" type="button" onclick="openModal()">Click here to connect</button> -->
-         <a href="contact.html" class="cta-button">Click here to connect</a>
+        <a href="contact.html" class="cta-button">Click here to connect</a>
       </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Modal -->
+  <!-- MODAL PLACEHOLDER -->
   <div id="chatModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
     <div class="modal-content">
       <button id="closeModal" class="modal-close" aria-label="Close">&times;</button>
       <h2 id="modalTitle" class="modal-title">Let's Chat</h2>
       <form id="chatForm" class="modal-form" novalidate>
-        <label>
-          Name:<br />
+        <label>Name:<br />
           <input type="text" name="name" required class="form-input" />
         </label>
-        <label>
-          Email:<br />
+        <label>Email:<br />
           <input type="email" name="email" required class="form-input" />
         </label>
-        <label>
-          Phone:<br />
+        <label>Phone:<br />
           <input type="tel" name="phone" required class="form-input" />
         </label>
-        <label>
-          Tell us your story:<br />
+        <label>Tell us your story:<br />
           <textarea name="story" rows="4" required class="form-textarea" placeholder="Share anything you'd like us to know..."></textarea>
         </label>
         <button type="submit" class="submit-button">Submit</button>
@@ -122,12 +117,6 @@
   <div id="footer-placeholder"></div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-  $(function(){
-    $("#nav-placeholder").load("nav.html");
-    $("#footer-placeholder").load("footer.html");
-  });
-  </script>
   <script src="js/index.js"></script>
 </body>
 </html>

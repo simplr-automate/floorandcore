@@ -1,9 +1,16 @@
+// index.js
+
+// =============================
 // Load nav and footer
+// =============================
 $(function () {
   $("#nav-placeholder").load("/nav.html");
   $("#footer-placeholder").load("/footer.html");
 });
 
+// =============================
+// Modal + Form Handling
+// =============================
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('chatModal');
   const openBtn = document.querySelector('.cta-button');
@@ -15,11 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  openBtn.addEventListener('click', () => {
+  // Open modal
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // prevent default anchor action
     modal.style.display = 'flex';
     modal.focus();
   });
 
+  // Close modal
   closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
   });
@@ -30,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Form submission
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const requiredFields = ['name', 'email', 'phone', 'story'];
@@ -62,56 +73,52 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Photo Gallery Auto-rotation
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.gallery-slide');
-    const indicators = document.querySelectorAll('.indicator');
-    let currentSlide = 0;
-    let slideInterval;
+// =============================
+// Photo Gallery Auto-Rotation
+// =============================
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.gallery-slide');
+  const indicators = document.querySelectorAll('.indicator');
+  let currentSlide = 0;
+  let slideInterval;
 
-    function showSlide(index) {
-        // Remove active class from all slides and indicators
-        slides.forEach(slide => slide.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
 
-        // Add active class to current slide and indicator
-        slides[index].classList.add('active');
-        indicators[index].classList.add('active');
+    slides[index].classList.add('active');
+    indicators[index].classList.add('active');
+    currentSlide = index;
+  }
 
-        currentSlide = index;
-    }
+  function nextSlide() {
+    showSlide((currentSlide + 1) % slides.length);
+  }
 
-    function nextSlide() {
-        const next = (currentSlide + 1) % slides.length;
-        showSlide(next);
-    }
+  function startSlideshow() {
+    slideInterval = setInterval(nextSlide, 4000); // 4s per slide
+  }
 
-    function startSlideshow() {
-        slideInterval = setInterval(nextSlide, 4000); // Change every 4 seconds
-    }
+  function stopSlideshow() {
+    clearInterval(slideInterval);
+  }
 
-    function stopSlideshow() {
-        clearInterval(slideInterval);
-    }
-
-    // Click handlers for indicators
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            showSlide(index);
-            stopSlideshow();
-            startSlideshow(); // Restart the auto-rotation
-        });
+  // Indicator click
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      showSlide(index);
+      stopSlideshow();
+      startSlideshow();
     });
+  });
 
-    // Pause on hover
-    const gallery = document.querySelector('.photo-gallery');
-    if (gallery) {
-        gallery.addEventListener('mouseenter', stopSlideshow);
-        gallery.addEventListener('mouseleave', startSlideshow);
-    }
+  // Pause on hover
+  const gallery = document.querySelector('.photo-gallery');
+  if (gallery) {
+    gallery.addEventListener('mouseenter', stopSlideshow);
+    gallery.addEventListener('mouseleave', startSlideshow);
+  }
 
-    // Start the slideshow
-    startSlideshow();
-
-    // Your existing modal code here...
+  // Start auto slideshow
+  startSlideshow();
 });
