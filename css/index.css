@@ -338,6 +338,8 @@ a {
     font-weight: 700;
 }
 
+/* ============================= */
+/* 🌟 CTA BUTTON FIXED */
 .cta-button {
     background: linear-gradient(135deg, #85586F, #a67c8a);
     color: white;
@@ -348,9 +350,12 @@ a {
     font-size: 1.125rem;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-    width: max-content;
-    max-width: 100%;
+    width: 100%; /* full width for responsiveness */
+    max-width: 400px; /* optional desktop limit */
+    text-align: center; /* ensure text centers */
     text-transform: uppercase;
+    display: inline-block; /* preserves padding */
+    box-sizing: border-box;
 }
 
 .cta-button:hover {
@@ -463,8 +468,9 @@ a {
     }
 
     .cta-button {
-        width: 100%;
-        padding: 1rem 0;
+        width: 100%; /* fills mobile width */
+        padding: 1rem 0; /* smaller padding */
+        font-size: 1rem; /* optional text scale */
     }
 
     .gallery-container {
