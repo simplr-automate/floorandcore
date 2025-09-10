@@ -161,7 +161,7 @@ summary::-webkit-details-marker {
 
 /* Custom arrow */
 .faq-question::after {
-    content: '⯈'; /* desktop-style arrow */
+    content: '\25B6'; /* ▶ Black right-pointing triangle */
     font-size: 1.2rem;
     transition: transform 0.3s ease;
     display: inline-block;
