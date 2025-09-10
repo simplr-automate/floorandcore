@@ -1,5 +1,5 @@
 /* ============================= */
-/* GLOBAL RESET & BOX-SIZING */
+/* 🌎 GLOBAL RESET & BOX-SIZING */
 /* ============================= */
 *,
 *::before,
@@ -10,19 +10,21 @@
 }
 
 html, body {
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
-  font-family: 'Comfortaa', sans-serif;
+  font-family: 'Nunito', sans-serif;
   display: flex;
   flex-direction: column;
+  background: #fcf8ed; /* light beige background */
+  color: #44422F;
 }
 
 /* ============================= */
-/* HERO BANNER */
+/* 🌟 HERO BANNER */
 /* ============================= */
 .hero-banner {
-  background: linear-gradient(135deg, #ac7d88, #ac7d88 50%, #ac7d88);
+  background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 50%, #ac7d88 100%);
   padding: clamp(3rem, 8vw, 6rem) 1rem;
   text-align: center;
   position: relative;
@@ -58,7 +60,6 @@ html, body {
 }
 
 .hero-subtitle {
-  font-family: 'Nunito', sans-serif;
   font-size: clamp(0.95rem, 2.5vw, 1.4rem);
   font-weight: 300;
   opacity: 0.95;
@@ -68,7 +69,7 @@ html, body {
 }
 
 /* ============================= */
-/* MAIN CONTAINER */
+/* 🌟 MAIN CONTAINER */
 /* ============================= */
 .main-container {
   flex: 1;
@@ -80,7 +81,7 @@ html, body {
 }
 
 /* ============================= */
-/* TESTIMONIAL SLIDER */
+/* 🌟 TESTIMONIAL SLIDER */
 /* ============================= */
 .testimonial-slider {
   position: relative;
@@ -101,7 +102,7 @@ html, body {
 }
 
 .slide {
-  flex: 0 0 100%; /* Ensure exactly one slide per view */
+  flex: 0 0 100%;
   padding: clamp(1.5rem, 4vw, 3.5rem);
   display: flex;
   flex-direction: column;
@@ -113,7 +114,6 @@ html, body {
 .testimonial-text {
   font-size: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.6;
-  font-family: 'Nunito', sans-serif;
   font-weight: 400;
   color: #85586F;
   margin-bottom: 1rem;
@@ -126,11 +126,10 @@ html, body {
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: #475135;
   text-align: center;
-  font-family: 'Nunito', sans-serif;
 }
 
 /* ============================= */
-/* NAVIGATION DOTS */
+/* 🌟 NAVIGATION DOTS */
 /* ============================= */
 .nav-buttons {
   display: flex;
@@ -163,182 +162,7 @@ html, body {
 }
 
 /* ============================= */
-/* RESPONSIVE TWEAKS */
-/* ============================= */
-@media (max-width: 768px) {
-  .testimonial-text {
-    font-size: clamp(0.95rem, 2.5vw, 1.3rem);
-  }
-  .testimonial-author {
-    font-size: clamp(0.9rem, 2vw, 1rem);
-  }
-}
-/* ============================= */
-/* GLOBAL RESET & BOX-SIZING */
-/* ============================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  width: 100%;
-  min-height: 100vh;
-  font-family: 'Comfortaa', sans-serif;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ============================= */
-/* HERO BANNER */
-/* ============================= */
-.hero-banner {
-  background: linear-gradient(135deg, #ac7d88, #ac7d88 50%, #ac7d88);
-  padding: clamp(3rem, 8vw, 6rem) 1rem;
-  text-align: center;
-  position: relative;
-  overflow: visible; /* changed from hidden to visible */
-  width: 100%;
-}
-
-.hero-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.1);
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.hero-title {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 800;
-  font-size: clamp(1.8rem, 5vw, 4rem);
-  margin-bottom: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  color: white;
-}
-
-.hero-subtitle {
-  font-family: 'Nunito', sans-serif;
-  font-size: clamp(0.95rem, 2.5vw, 1.4rem);
-  font-weight: 300;
-  opacity: 0.95;
-  margin: 0 auto;
-  max-width: 55ch;
-  color: white;
-}
-
-/* ============================= */
-/* MAIN CONTAINER */
-/* ============================= */
-.main-container {
-  flex: 1;
-  background: url('/assets/images/icons/studioPic.jpg') center/cover no-repeat;
-  padding: clamp(1.5rem, 4vw, 4rem);
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-/* ============================= */
-/* TESTIMONIAL SLIDER */
-/* ============================= */
-.testimonial-slider {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #FFF;
-  box-shadow: 0 8px 24px rgba(71, 81, 53, 0.12), 0 4px 12px rgba(71, 81, 53, 0.06);
-  border: 1px solid #e2e8f0;
-  max-width: 900px;
-  width: 100%;
-  min-height: clamp(280px, 50vh, 400px);
-}
-
-.slides {
-  display: flex;
-  width: 100%;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.slide {
-  flex: 0 0 100%; /* Ensure exactly one slide per view */
-  padding: clamp(1.5rem, 4vw, 3.5rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-.testimonial-text {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  line-height: 1.6;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400;
-  color: #85586F;
-  margin-bottom: 1rem;
-  max-width: 65ch;
-  text-align: center;
-}
-
-.testimonial-author {
-  font-weight: 700;
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  color: #475135;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
-}
-
-/* ============================= */
-/* NAVIGATION DOTS */
-/* ============================= */
-.nav-buttons {
-  display: flex;
-  justify-content: center;
-  margin: clamp(1rem, 3vw, 3.5rem) 0;
-  gap: clamp(0.5rem, 2vw, 1rem);
-  flex-wrap: wrap;
-}
-
-.nav-button {
-  width: clamp(14px, 2vw, 18px);
-  height: clamp(14px, 2vw, 18px);
-  border-radius: 50%;
-  background-color: #85586F;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-button:hover,
-.nav-button:focus {
-  background-color: #8C7D88;
-  transform: scale(1.2);
-  outline: none;
-}
-
-.nav-button.active {
-  background-color: #5C465C;
-  transform: scale(1.4);
-}
-
-/* ============================= */
-/* RESPONSIVE TWEAKS */
+/* 🌟 RESPONSIVE TWEAKS */
 /* ============================= */
 @media (max-width: 768px) {
   .hero-banner {
