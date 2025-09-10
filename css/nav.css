@@ -153,6 +153,7 @@ nav a:focus {
     display: flex;
   }
 
+  /* Nav panel */
   nav.nav-links {
     position: fixed;
     top: 0;
@@ -162,6 +163,7 @@ nav a:focus {
     max-width: 360px;
     background: #fcf8ed;
     flex-direction: column;
+    align-items: flex-start; /* all links aligned left */
     padding: 6rem 1.5rem 2rem;
     transition: right 0.3s ease-in-out;
     z-index: 1000;
@@ -180,6 +182,12 @@ nav a:focus {
     padding: 1rem 0;
     text-align: left;
     border-radius: 0;
+    display: block;
+  }
+
+  /* Remove arrow from services */
+  .dropdown-toggle .arrow {
+    display: none;
   }
 
   /* Dropdown content in-flow */
