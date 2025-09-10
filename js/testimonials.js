@@ -1,21 +1,25 @@
-// Testimonial slider logic
-document.addEventListener('DOMContentLoaded', function() {
-  const slides = document.getElementById('slides');
-  const buttons = document.querySelectorAll('.nav-button');
+document.addEventListener('DOMContentLoaded', () => {
+  const slidesContainer = document.getElementById('slides');
+  const slides = document.querySelectorAll('.slide');
+  const navButtons = document.querySelectorAll('.nav-button');
+  const totalSlides = slides.length;
+
   let currentIndex = 0;
-  const totalSlides = buttons.length;
-  const slideWidth = 100; // percent width per slide
   let autoSlideInterval;
   let resumeTimeout;
+  const autoSlideDelay = 10000; // 10 seconds
 
+  /* ============================= */
+  /* Slide Navigation Function */
+  /* ============================= */
   function goToSlide(index) {
     currentIndex = index;
-    slides.style.transform = `translateX(-${slideWidth * index}%)`;
-    updateButtons();
+    slidesContainer.style.transform = `translateX(-${100 * index}%)`;
+    updateNavButtons();
   }
 
-  function updateButtons() {
-    buttons.forEach((btn, i) => {
+  function updateNavButtons() {
+    navButtons.forEach((btn, i) => {
       if (i === currentIndex) {
         btn.classList.add('active');
         btn.setAttribute('aria-selected', 'true');
@@ -28,11 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  /* ============================= */
+  /* Auto Slide */
+  /* ============================= */
   function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % totalSlides;
-      goToSlide(nextIndex);
-    }, 10000);
+      goToSlide((currentIndex + 1) % totalSlides);
+    }, autoSlideDelay);
   }
 
   function stopAutoSlide() {
@@ -42,12 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function pauseAndResumeAutoSlide() {
     stopAutoSlide();
-    resumeTimeout = setTimeout(() => {
-      startAutoSlide();
-    }, 10000);
+    resumeTimeout = setTimeout(() => startAutoSlide(), autoSlideDelay);
   }
 
-  buttons.forEach((btn, index) => {
+  /* ============================= */
+  /* Nav Buttons Click */
+  /* ============================= */
+  navButtons.forEach((btn, index) => {
     btn.addEventListener('click', () => {
       goToSlide(index);
       pauseAndResumeAutoSlide();
@@ -56,23 +63,63 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
         e.preventDefault();
-        let nextIndex = (currentIndex + 1) % totalSlides;
-        buttons[nextIndex].focus();
-        goToSlide(nextIndex);
-        pauseAndResumeAutoSlide();
+        const nextIndex = (currentIndex + 1) % totalSlides;
+        buttonsFocusAndSlide(nextIndex);
       } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
         e.preventDefault();
-        let prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        buttons[prevIndex].focus();
-        goToSlide(prevIndex);
-        pauseAndResumeAutoSlide();
+        const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        buttonsFocusAndSlide(prevIndex);
       }
     });
   });
 
-  slides.addEventListener('focusin', () => pauseAndResumeAutoSlide());
+  function buttonsFocusAndSlide(index) {
+    navButtons[index].focus();
+    goToSlide(index);
+    pauseAndResumeAutoSlide();
+  }
 
-  // Initialize
+  /* ============================= */
+  /* Touch/Swipe Support */
+  /* ============================= */
+  let startX = 0;
+  let isDragging = false;
+
+  slidesContainer.addEventListener('touchstart', (e) => {
+    stopAutoSlide();
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  slidesContainer.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.touches[0].clientX - startX;
+    slidesContainer.style.transform = `translateX(${-100 * currentIndex + (deltaX / slidesContainer.offsetWidth) * 100}%)`;
+  });
+
+  slidesContainer.addEventListener('touchend', (e) => {
+    isDragging = false;
+    const deltaX = e.changedTouches[0].clientX - startX;
+
+    if (deltaX < -50) {
+      goToSlide((currentIndex + 1) % totalSlides);
+    } else if (deltaX > 50) {
+      goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+    } else {
+      goToSlide(currentIndex);
+    }
+
+    pauseAndResumeAutoSlide();
+  });
+
+  /* ============================= */
+  /* Keyboard Focus Pause */
+  /* ============================= */
+  slidesContainer.addEventListener('focusin', pauseAndResumeAutoSlide);
+
+  /* ============================= */
+  /* Initialize Slider */
+  /* ============================= */
   goToSlide(0);
   startAutoSlide();
 });

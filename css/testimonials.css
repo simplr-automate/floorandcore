@@ -1,38 +1,26 @@
-:root {
-  --beige: #F5ECD8;
-  --white: #FFF;
-  --olive: #6E7C4F;
-  --olive-dark: #475135;
-  --sage: #A7B89E;
-  --buttery-yellow: #FFF7DC;
-  --text-main: #44422F;
-  --text-soft: #7A7D6B;
-  --cta-yellow: #FCE794;
+/* ============================= */
+/* GLOBAL RESET & BOX-SIZING */
+/* ============================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Override base.css for this page */
-body {
-  background: var(--white) !important;
-  min-height: 100vh !important;
-  display: flex !important;
-  flex-direction: column !important;
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Comfortaa', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
-#nav-placeholder,
-#footer-placeholder {
-  flex-shrink: 0;
-  position: relative;
-  z-index: 10;
-}
-
-a {
-  color: var(--olive-dark);
-  text-decoration: none;
-}
-
-/* ==================== */
-/* Hero Banner */
-/* ==================== */
+/* ============================= */
+/* HERO BANNER */
+/* ============================= */
 .hero-banner {
   background: linear-gradient(135deg, #ac7d88, #ac7d88 50%, #ac7d88);
   padding: clamp(3rem, 8vw, 6rem) 1rem;
@@ -40,7 +28,6 @@ a {
   position: relative;
   overflow: hidden;
   width: 100%;
-  flex-shrink: 0;
 }
 
 .hero-banner::before {
@@ -80,51 +67,46 @@ a {
   color: white;
 }
 
-/* ==================== */
-/* Main Container */
-/* ==================== */
+/* ============================= */
+/* MAIN CONTAINER */
+/* ============================= */
 .main-container {
   flex: 1;
   background: url('/assets/images/icons/studioPic.jpg') center/cover no-repeat;
   padding: clamp(1.5rem, 4vw, 4rem);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   width: 100%;
 }
 
-/* ==================== */
-/* Testimonial Slider */
-/* ==================== */
+/* ============================= */
+/* TESTIMONIAL SLIDER */
+/* ============================= */
 .testimonial-slider {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  background: var(--white);
-  box-shadow:
-    0 8px 24px rgba(71, 81, 53, 0.12),
-    0 4px 12px rgba(71, 81, 53, 0.06);
+  background: #FFF;
+  box-shadow: 0 8px 24px rgba(71, 81, 53, 0.12), 0 4px 12px rgba(71, 81, 53, 0.06);
   border: 1px solid #e2e8f0;
   max-width: 900px;
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   min-height: clamp(280px, 50vh, 400px);
 }
 
 .slides {
   display: flex;
+  width: 100%;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
 }
 
 .slide {
-  min-width: 100%;
+  flex: 0 0 100%; /* Ensure exactly one slide per view */
   padding: clamp(1.5rem, 4vw, 3.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  user-select: none;
   box-sizing: border-box;
 }
 
@@ -142,16 +124,14 @@ a {
 .testimonial-author {
   font-weight: 700;
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  color: var(--olive-dark);
+  color: #475135;
   text-align: center;
-  max-width: 65ch;
-  margin: 0;
   font-family: 'Nunito', sans-serif;
 }
 
-/* ==================== */
-/* Navigation Dots */
-/* ==================== */
+/* ============================= */
+/* NAVIGATION DOTS */
+/* ============================= */
 .nav-buttons {
   display: flex;
   justify-content: center;
@@ -177,12 +157,19 @@ a {
   outline: none;
 }
 
-.nav-button:focus-visible {
-  outline: 2px solid #475135;
-  outline-offset: 2px;
-}
-
 .nav-button.active {
   background-color: #5C465C;
   transform: scale(1.4);
+}
+
+/* ============================= */
+/* RESPONSIVE TWEAKS */
+/* ============================= */
+@media (max-width: 768px) {
+  .testimonial-text {
+    font-size: clamp(0.95rem, 2.5vw, 1.3rem);
+  }
+  .testimonial-author {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
 }
