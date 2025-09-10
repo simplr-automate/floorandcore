@@ -10,38 +10,32 @@
   --cta-yellow: #FCE794;
 }
 
-/* Override base.css for this page only */
+/* Override base.css for this page */
 body {
-  background: white !important;
+  background: var(--white) !important;
   min-height: 100vh !important;
   display: flex !important;
   flex-direction: column !important;
 }
 
-#nav-placeholder {
-  flex-shrink: 0;
-  position: relative;
-  z-index: 10;
-}
-
+#nav-placeholder,
 #footer-placeholder {
-  background: white !important;
   flex-shrink: 0;
-  margin-top: 0 !important; /* Changed from auto to 0 */
   position: relative;
   z-index: 10;
 }
-
 
 a {
   color: var(--olive-dark);
   text-decoration: none;
 }
 
+/* ==================== */
 /* Hero Banner */
+/* ==================== */
 .hero-banner {
-  background: linear-gradient(135deg, #ac7d88 0%, #ac7d88 50%, #ac7d88 100%);
-  padding: 6rem 0;
+  background: linear-gradient(135deg, #ac7d88, #ac7d88 50%, #ac7d88);
+  padding: clamp(3rem, 8vw, 6rem) 1rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -49,14 +43,10 @@ a {
   flex-shrink: 0;
 }
 
-
 .hero-banner::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0,0,0,0.1);
   z-index: 1;
 }
@@ -66,44 +56,46 @@ a {
   z-index: 2;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .hero-title {
   font-family: 'Fredoka', sans-serif;
   font-weight: 800;
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 5vw, 4rem);
+  margin-bottom: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   color: white;
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
-  font-weight: 300;
-  margin-bottom: 0;
-  opacity: 0.95;
-  color: white;
   font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.95rem, 2.5vw, 1.4rem);
+  font-weight: 300;
+  opacity: 0.95;
+  margin: 0 auto;
+  max-width: 55ch;
+  color: white;
 }
 
-/* Main container for testimonials - FIXED */
+/* ==================== */
+/* Main Container */
+/* ==================== */
 .main-container {
-  flex: 1 !important;
-  background: url('/assets/images/icons/studioPic.jpg') center center/cover no-repeat;
-  padding: 4rem 0 4rem 0; /* Add bottom padding back */
+  flex: 1;
+  background: url('/assets/images/icons/studioPic.jpg') center/cover no-repeat;
+  padding: clamp(1.5rem, 4vw, 4rem);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
-  min-height: auto !important;
-  overflow: visible !important;
 }
 
-/* Testimonial slider styles */
+/* ==================== */
+/* Testimonial Slider */
+/* ==================== */
 .testimonial-slider {
   position: relative;
   overflow: hidden;
@@ -116,209 +108,81 @@ a {
   max-width: 900px;
   width: 90%;
   margin: 0 auto;
-  min-height: 400px; /* Ensure minimum height */
+  min-height: clamp(280px, 50vh, 400px);
 }
 
 .slides {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
-  min-height: 300px; /* Ensure slides have minimum height */
 }
 
 .slide {
   min-width: 100%;
-  padding: 3rem 3.5rem;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   user-select: none;
   box-sizing: border-box;
-  opacity: 1;
-  transition: opacity 0.5s ease;
-  min-height: 300px; /* Ensure each slide has minimum height */
 }
 
 .testimonial-text {
-  font-size: 1.5rem;
-  line-height: 1.75;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.6;
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   color: #85586F;
   margin-bottom: 1rem;
-  max-width: 650px;
+  max-width: 65ch;
   text-align: center;
-  width: 100%;
 }
 
 .testimonial-author {
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: var(--olive-dark);
-  text-align: right;
-  max-width: 650px;
-  width: 100%;
+  text-align: center;
+  max-width: 65ch;
   margin: 0;
   font-family: 'Nunito', sans-serif;
 }
 
+/* ==================== */
+/* Navigation Dots */
+/* ==================== */
 .nav-buttons {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0 3.5rem 0; /* Add the spacing here instead */
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  margin: clamp(1rem, 3vw, 3.5rem) 0;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  flex-wrap: wrap;
 }
 
-/* Base nav buttons */
 .nav-button {
-  width: 18px;
-  height: 18px;
+  width: clamp(14px, 2vw, 18px);
+  height: clamp(14px, 2vw, 18px);
   border-radius: 50%;
   background-color: #85586F;
   border: none;
   cursor: pointer;
-  transition: background-color 0.35s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover & focus for nav button */
 .nav-button:hover,
 .nav-button:focus {
   background-color: #8C7D88;
-  transform: scale(1.3);
+  transform: scale(1.2);
   outline: none;
 }
 
-/* Active dot */
+.nav-button:focus-visible {
+  outline: 2px solid #475135;
+  outline-offset: 2px;
+}
+
 .nav-button.active {
   background-color: #5C465C;
-  transform: scale(1.5);
-}
-
-/* ============================= */
-/* MOBILE + TABLET OPTIMIZATION */
-/* ============================= */
-
-/* Tablets & small laptops */
-@media (max-width: 768px) {
-
-  /* Hero adjustments */
-  .hero-title {
-    font-size: 2.4rem;
-    letter-spacing: 1px;
-    line-height: 1.2;
-  }
-
-  .hero-subtitle {
-    font-size: 1.15rem;
-    line-height: 1.4;
-    padding: 0 1rem;
-  }
-
-  .hero-banner {
-    padding: 3.5rem 1rem;
-  }
-
-  /* Main container adjustments */
-  .main-container {
-    padding: 2rem 1rem 3rem 1rem;
-  }
-
-  /* Slide adjustments */
-  .slide {
-    padding: 2rem 1.5rem;
-    min-height: auto;
-  }
-
-  .testimonial-text {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    text-align: center;
-    max-width: 100%;
-    padding: 0 0.5rem;
-  }
-
-  .testimonial-author {
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  /* Slider container */
-  .testimonial-slider {
-    min-height: auto;
-    width: 95%;
-    padding: 1rem;
-  }
-
-  /* Navigation buttons */
-  .nav-button {
-    width: 16px;
-    height: 16px;
-  }
-
-  .nav-buttons {
-    gap: 0.75rem;
-    margin: 1.5rem 0 2rem 0;
-  }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-
-  .hero-title {
-    font-size: 1.8rem;
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.3;
-  }
-
-  .hero-banner {
-    padding: 3rem 0.5rem;
-  }
-
-  .hero-content {
-    padding: 0 0.5rem;
-  }
-
-  .main-container {
-    padding: 1.5rem 0.5rem 2.5rem 0.5rem;
-  }
-
-  .slide {
-    padding: 1.5rem 1rem;
-    min-height: auto;
-  }
-
-  .testimonial-text {
-    font-size: 1rem;
-    line-height: 1.4;
-    text-align: center;
-    padding: 0 0.25rem;
-  }
-
-  .testimonial-author {
-    font-size: 0.95rem;
-    text-align: center;
-  }
-
-  .testimonial-slider {
-    width: 100%;
-    min-height: auto;
-    padding: 0.5rem;
-  }
-
-  .nav-button {
-    width: 14px;
-    height: 14px;
-  }
-
-  .nav-buttons {
-    gap: 0.5rem;
-    margin: 1rem 0 1.5rem 0;
-  }
+  transform: scale(1.4);
 }
