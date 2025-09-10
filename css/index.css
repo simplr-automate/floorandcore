@@ -439,6 +439,10 @@ a {
         gap: 3rem;
     }
 
+    .left-section {
+        position: static; /* ✅ No sticky overlap on tablet/mobile */
+    }
+
     .main-logo {
         width: 200px;
         height: 200px;
@@ -474,5 +478,10 @@ a {
 
     .site-content {
         padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .left-section {
+        position: static; /* ✅ Ensures logo & gallery flow naturally */
     }
 }
