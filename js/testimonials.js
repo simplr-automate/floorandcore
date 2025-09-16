@@ -1,125 +1,85 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const slidesContainer = document.getElementById('slides');
-  const slides = document.querySelectorAll('.slide');
-  const navButtons = document.querySelectorAll('.nav-button');
-  const totalSlides = slides.length;
+  const testimonialList = document.querySelector('.testimonial-list');
+  const cards = Array.from(testimonialList.children);
+  const cardsVisible = 3; // Number of cards visible at a time
 
-  let currentIndex = 0;
-  let autoSlideInterval;
-  let resumeTimeout;
-  const autoSlideDelay = 10000; // 10 seconds
+  // Calculate card height including margin
+  const cardHeight = cards[0].offsetHeight + parseInt(getComputedStyle(cards[0]).marginBottom);
 
-  /* ============================= */
-  /* Slide Navigation Function */
-  /* ============================= */
-  function goToSlide(index) {
-    currentIndex = index;
-    slidesContainer.style.transform = `translateX(-${100 * index}%)`;
-    updateNavButtons();
-  }
+  // Set the container height to show only `cardsVisible` cards
+  testimonialList.style.height = `${cardHeight * cardsVisible}px`;
+  testimonialList.style.overflow = 'hidden';
+  testimonialList.style.position = 'relative';
 
-  function updateNavButtons() {
-    navButtons.forEach((btn, i) => {
-      if (i === currentIndex) {
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-        btn.setAttribute('tabindex', '0');
+  // Create slider wrapper
+  const slider = document.createElement('div');
+  slider.style.position = 'absolute';
+  slider.style.top = '0';
+  slider.style.left = '0';
+  slider.style.right = '0';
+  slider.style.transition = 'transform 0.4s ease-out';
+  slider.style.willChange = 'transform';
+
+  // Move cards into slider
+  cards.forEach(card => slider.appendChild(card));
+  testimonialList.appendChild(slider);
+
+  let targetIndex = 0;
+  let currentTransform = 0;
+  let isAnimating = false;
+
+  // Function to slide to target index
+  function slideToTarget() {
+    isAnimating = true;
+    const desiredTransform = -cardHeight * targetIndex;
+
+    function animate() {
+      currentTransform += (desiredTransform - currentTransform) * 0.2; // adjust speed
+      slider.style.transform = `translateY(${currentTransform}px)`;
+
+      if (Math.abs(currentTransform - desiredTransform) > 0.5) {
+        requestAnimationFrame(animate);
       } else {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-selected', 'false');
-        btn.setAttribute('tabindex', '-1');
+        slider.style.transform = `translateY(${desiredTransform}px)`;
+        currentTransform = desiredTransform;
+        isAnimating = false;
       }
-    });
-  }
-
-  /* ============================= */
-  /* Auto Slide */
-  /* ============================= */
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(() => {
-      goToSlide((currentIndex + 1) % totalSlides);
-    }, autoSlideDelay);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
-    clearTimeout(resumeTimeout);
-  }
-
-  function pauseAndResumeAutoSlide() {
-    stopAutoSlide();
-    resumeTimeout = setTimeout(() => startAutoSlide(), autoSlideDelay);
-  }
-
-  /* ============================= */
-  /* Nav Buttons Click */
-  /* ============================= */
-  navButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-      goToSlide(index);
-      pauseAndResumeAutoSlide();
-    });
-
-    btn.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        const nextIndex = (currentIndex + 1) % totalSlides;
-        buttonsFocusAndSlide(nextIndex);
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        buttonsFocusAndSlide(prevIndex);
-      }
-    });
-  });
-
-  function buttonsFocusAndSlide(index) {
-    navButtons[index].focus();
-    goToSlide(index);
-    pauseAndResumeAutoSlide();
-  }
-
-  /* ============================= */
-  /* Touch/Swipe Support */
-  /* ============================= */
-  let startX = 0;
-  let isDragging = false;
-
-  slidesContainer.addEventListener('touchstart', (e) => {
-    stopAutoSlide();
-    startX = e.touches[0].clientX;
-    isDragging = true;
-  });
-
-  slidesContainer.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    const deltaX = e.touches[0].clientX - startX;
-    slidesContainer.style.transform = `translateX(${-100 * currentIndex + (deltaX / slidesContainer.offsetWidth) * 100}%)`;
-  });
-
-  slidesContainer.addEventListener('touchend', (e) => {
-    isDragging = false;
-    const deltaX = e.changedTouches[0].clientX - startX;
-
-    if (deltaX < -50) {
-      goToSlide((currentIndex + 1) % totalSlides);
-    } else if (deltaX > 50) {
-      goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
-    } else {
-      goToSlide(currentIndex);
     }
+    requestAnimationFrame(animate);
+  }
 
-    pauseAndResumeAutoSlide();
+  // Desktop scroll support
+  window.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    if (isAnimating) return; // ignore while animating
+
+    const delta = Math.sign(e.deltaY);
+    targetIndex += delta;
+    targetIndex = Math.max(0, Math.min(cards.length - cardsVisible, targetIndex));
+    slideToTarget();
+  }, { passive: false });
+
+  // Touch support for mobile
+  let startY = null;
+  testimonialList.addEventListener('touchstart', e => startY = e.touches[0].clientY);
+  testimonialList.addEventListener('touchmove', e => {
+    if (startY === null || isAnimating) return;
+    const diffY = startY - e.touches[0].clientY;
+    if (Math.abs(diffY) > 10) { // smaller threshold = more responsive
+      const delta = diffY > 0 ? 1 : -1;
+      targetIndex += delta;
+      targetIndex = Math.max(0, Math.min(cards.length - cardsVisible, targetIndex));
+      slideToTarget();
+      startY = e.touches[0].clientY;
+    }
   });
+  testimonialList.addEventListener('touchend', () => startY = null);
 
-  /* ============================= */
-  /* Keyboard Focus Pause */
-  /* ============================= */
-  slidesContainer.addEventListener('focusin', pauseAndResumeAutoSlide);
-
-  /* ============================= */
-  /* Initialize Slider */
-  /* ============================= */
-  goToSlide(0);
-  startAutoSlide();
+  // Optional: allow scrolling to hero/footer when reaching top/bottom
+  // If at top or bottom, enable normal page scroll
+  slider.addEventListener('transitionend', () => {
+    if (targetIndex === 0) testimonialList.style.overflow = 'visible';
+    else if (targetIndex === cards.length - cardsVisible) testimonialList.style.overflow = 'visible';
+    else testimonialList.style.overflow = 'hidden';
+  });
 });
