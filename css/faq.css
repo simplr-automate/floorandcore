@@ -161,13 +161,16 @@ summary::-webkit-details-marker {
 
 /* Custom arrow */
 .faq-question::after {
-    content: '\25B6'; /* ▶ Black right-pointing triangle */
+    content: '\25B6'; /* ▶ */
     font-size: 1.2rem;
     transition: transform 0.3s ease;
     display: inline-block;
     margin-left: 1rem;
-    color: black; /* overrides any system emoji color */
+    color: black; /* your desired color */
+    font-family: 'Fredoka', sans-serif; /* force it to use a text font */
+    -webkit-font-smoothing: antialiased; /* optional, smooth rendering */
 }
+
 
 .faq-question.open::after {
     transform: rotate(90deg);
@@ -182,13 +185,15 @@ summary::-webkit-details-marker {
     font-size: 1.1rem;
     line-height: 1.7;
     color: #44422F;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(247, 250, 240, 0.3);
+    box-sizing: border-box; /* add this */
 }
 
+
 .faq-answer.open {
-    max-height: 800px;
     padding: 1.5rem 2rem 2rem 2rem;
+    max-height: 2000px; /* large enough for any answer */
 }
 
 /* ============================= */
