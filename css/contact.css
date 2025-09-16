@@ -45,8 +45,7 @@ a {
   text-align: center;
   position: relative;
   overflow: hidden;
-  width: 100vw;         /* prevent horizontal overflow */
-  box-sizing: border-box;
+  width: 100vw;         
 }
 
 .hero-banner::before {
@@ -62,7 +61,6 @@ a {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 2rem;
-  box-sizing: border-box;
 }
 
 .hero-title {
@@ -92,27 +90,23 @@ a {
   margin: 0;
   padding: 0;
   font-family: 'Comfortaa', sans-serif;
-  box-sizing: border-box;
-}
-
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: clamp(2rem, 5vw, 4rem);
-  width: 100%;
-  box-sizing: border-box;
 }
 
 /* ============================= */
 /* CONTACT GRID */
 /* ============================= */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem);
+  width: 100%;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: clamp(1rem, 2vw, 2rem);
   margin-bottom: clamp(2rem, 5vw, 4rem);
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .contact-card {
@@ -124,10 +118,8 @@ a {
   border: 1px solid rgba(167, 184, 158, 0.2);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  box-sizing: border-box;
 }
 
-/* Card hover effects remain same */
 .contact-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(71, 81, 53, 0.12);
@@ -154,18 +146,14 @@ a {
   justify-content: center;
   gap: clamp(1rem, 2vw, 3rem);
   padding: clamp(1.5rem, 3vw, 2.5rem);
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .instagram-content,
 .qr-content {
-  flex: 1 1 220px; /* allow shrink on mobile */
-  min-width: 0;    /* critical to prevent overflow in flex */
-  box-sizing: border-box;
+  flex: 1 1 220px;
+  min-width: 0;
 }
 
-/* QR card adjustments */
 .qr-code-container {
   overflow: hidden;
   width: clamp(140px, 20vw, 250px);
@@ -173,7 +161,6 @@ a {
   display: flex;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-  transition: all 0.3s ease;
   border: 1px solid rgba(167, 184, 158, 0.3);
 }
 
@@ -182,28 +169,94 @@ a {
 /* ============================= */
 .location-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: clamp(1.5rem, 3vw, 3rem);
   width: 100%;
-  box-sizing: border-box;
 }
 
+/* Info card */
 .location-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.95);
+  background: #FFF;          /* white background */
   border-radius: 16px;
   padding: clamp(1.5rem, 3vw, 2rem);
   box-shadow: 0 8px 32px rgba(71, 81, 53, 0.08);
   border: 1px solid rgba(167, 184, 158, 0.2);
-  min-width: 0; /* prevent flex child overflow */
-  box-sizing: border-box;
+}
+
+/* Directions button */
+.directions-btn {
+  margin-top: 1rem;
+  display: inline-block;
+  background: var(--olive);
+  color: #FFF;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.directions-btn:hover {
+  background: var(--olive-dark);
+}
+
+/* Map */
+.map-container {
+  background: #FFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(71, 81, 53, 0.08);
+  border: 1px solid rgba(167, 184, 158, 0.2);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: 0;
 }
 
 /* ============================= */
-/* RESPONSIVE MEDIA QUERIES */
+/* DESKTOP LAYOUT */
+@media (min-width: 1025px) {
+  /* Contact grid desktop */
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 2rem;
+  }
+
+  .instagram-qr-card {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
+  .contact-card {
+    min-height: 200px;
+  }
+
+  /* Location: equal width info + map */
+  .location-content {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .map-container iframe {
+    min-height: 400px;
+  }
+}
+
 /* ============================= */
+/* MOBILE LAYOUT */
+@media (max-width: 1024px) {
+  .location-content {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container iframe {
+    min-height: 300px;
+  }
+}
+
 @media (max-width: 480px) {
   .instagram-qr-card {
     flex-direction: column;
@@ -212,10 +265,8 @@ a {
 }
 
 /* ============================= */
-/* 🔧 GLOBAL HORIZONTAL SCROLL FIX */
-/* ============================= */
+/* GLOBAL HORIZONTAL SCROLL FIX */
 html, body {
   overflow-x: hidden;
   width: 100%;
-  box-sizing: border-box;
 }
