@@ -112,12 +112,15 @@ a {
 /* ============================= */
 
 .site-content.container {
-    background: var(--white);  /* Set background to white */
-    margin: clamp(2rem, 5vw, 4rem) auto;
+    background: var(--white);
+    margin: clamp(2rem, 5vw, 4rem) auto; /* auto centers horizontally */
     padding: 0 1rem;
-    width: 100vw;            
+    width: 100%;              /* fixes 100vw scrollbar bug */
+    max-width: 1200px;        /* centers + limits desktop width */
     box-sizing: border-box;
 }
+
+
 
 .about-intro {
     display: flex;
