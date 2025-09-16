@@ -9,6 +9,20 @@ footer {
   font-family: 'Comfortaa', Arial, sans-serif;
 }
 
+/* --- Links --- */
+footer a {
+  color: var(--olive, #6E7C4F);
+  text-decoration: none;
+  font-family: 'Comfortaa', Arial, sans-serif;
+  transition: color 0.2s ease;
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--olive-dark, #475135);
+  text-decoration: underline;
+}
+
 /* --- Connect section --- */
 .footer-connect {
   display: flex;
