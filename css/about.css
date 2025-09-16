@@ -85,27 +85,6 @@ a {
     color: white;
 }
 
-/* ============================= */
-/* 🌟 HAMBURGER MENU FIX */
-/* ============================= */
-.menu-toggle {
-    width: 30px;   /* match index page */
-    height: 30px;  /* match index page */
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 100;
-}
-
-.menu-toggle span {
-    display: block;
-    height: 4px;
-    width: 100%;
-    background: var(--olive-dark);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
 
 /* ============================= */
 /* 🌟 ABOUT SECTION */
@@ -209,10 +188,5 @@ a {
 
     .hero-subtitle {
         font-size: clamp(0.9rem, 4vw, 1.1rem);
-    }
-
-    .menu-toggle {
-        width: 28px;   /* match mobile nav size */
-        height: 28px;  /* match mobile nav size */
     }
 }
