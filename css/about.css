@@ -23,7 +23,7 @@ html, body {
     color: var(--text-main);
     scroll-behavior: smooth;
     box-sizing: border-box;
-    overflow-x: hidden; /* prevent horizontal scroll globally */
+    overflow-x: hidden;
 }
 
 /* Make all elements inherit border-box */
@@ -89,8 +89,8 @@ a {
 /* 🌟 HAMBURGER MENU FIX */
 /* ============================= */
 .menu-toggle {
-    width: 36px;
-    height: 36px;
+    width: 30px;   /* match index page */
+    height: 30px;  /* match index page */
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -109,25 +109,21 @@ a {
 
 /* ============================= */
 /* 🌟 ABOUT SECTION */
-/* ============================= */
-
 .site-content.container {
     background: var(--white);
-    margin: clamp(2rem, 5vw, 4rem) auto; /* auto centers horizontally */
+    margin: clamp(2rem, 5vw, 4rem) auto;
     padding: 0 1rem;
-    width: 100%;              /* fixes 100vw scrollbar bug */
-    max-width: 1200px;        /* centers + limits desktop width */
+    width: 100%;
+    max-width: 1200px;
     box-sizing: border-box;
 }
-
-
 
 .about-intro {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row-reverse; 
+    flex-direction: row-reverse;
     align-items: flex-end;
-    gap: clamp(1rem, 2vw, 2rem); 
+    gap: clamp(1rem, 2vw, 2rem);
     margin: 3rem 0;
     width: 100%;               
     box-sizing: border-box;
@@ -204,11 +200,6 @@ a {
         width: 100%;
         box-sizing: border-box;
     }
-
-    .menu-toggle {
-        width: 36px;
-        height: 36px; /* ensures mobile hamburger stays same as index */
-    }
 }
 
 @media (max-width: 480px) {
@@ -218,5 +209,10 @@ a {
 
     .hero-subtitle {
         font-size: clamp(0.9rem, 4vw, 1.1rem);
+    }
+
+    .menu-toggle {
+        width: 28px;   /* match mobile nav size */
+        height: 28px;  /* match mobile nav size */
     }
 }
