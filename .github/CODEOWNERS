@@ -1,0 +1,5 @@
+# GitHub CODEOWNERS file
+# This file identifies individuals or teams responsible for code in this repository
+# Anyone listed here will be required to review and approve pull requests before they can be merged
+
+* @simplr-automate
